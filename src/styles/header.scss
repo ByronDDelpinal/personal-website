@@ -1,0 +1,66 @@
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.site-header {
+  align-items: center;
+  background: $color-dark;
+  display: flex;
+  height: $header-height;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: $spacing-standard 0;
+  position: relative;
+  width: 100%;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * #{$header-border-width});
+    left: calc(-1 * #{$header-border-width});
+    height: calc(100% + #{$header-border-width} * 2);
+    width: calc(100% + #{$header-border-width});
+    background: $gradient-border;
+    z-index: -1;
+    animation: animatedgradient 4s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+}
+
+#main-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#main-menu ul li {
+  padding: 0 18px;
+  display: inline-block;
+  position: relative;
+}
+
+#main-menu ul li a {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $color-light;
+  line-height: 42px;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+}
+
+#main-menu ul li:last-child:after {
+  display: none;
+}
+
+.brand-logo {
+  display: inline-block;
+  width: 100px;
+}

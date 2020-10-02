@@ -1,0 +1,189 @@
+.contact-us {
+  background-color: $color-dark;
+
+  & .button {
+    width: 80%;
+  }
+}
+
+.wrap-contact100 {
+  background: #fafdfe;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px;
+  box-shadow: 3px 3px 5px #7f7f7f85;
+}
+
+.contact100-pic {
+  width: 10rem;
+  display: inline-block;
+  padding-top: 85px;
+  will-change: transform;
+  transform: perspective(300px) rotateX(0deg) rotateY(0deg);
+  transition: 0.4s ease-out;
+  vertical-align: top;
+}
+
+.contact-form {
+  width: calc(100% - 10rem);
+  display: inline-block;
+  padding-left: 15%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .contact100-pic {
+    text-align: center;
+  }
+
+  .contact100-pic,
+  .contact-form {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.contact100-pic:hover {
+  will-change: transform;
+  transform: perspective(300px) rotateX(-1.58deg) rotateY(-4.46deg)
+    scale3d(1.1, 1.1, 1.1);
+  transition: 0.4s ease-out;
+}
+
+.contact-form h5 {
+  color: #000;
+  font-size: 30px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.contact-form .field label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.contact-form .field {
+  margin: 10px 0px;
+  z-index: 1;
+  position: relative;
+}
+
+.contact-form .field input,
+.contact-form .field textarea {
+  display: block;
+  width: 100%;
+  background: #e6e6e6;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 30px 0 50px;
+  border: 0;
+}
+
+.contact-form .field textarea {
+  height: 120px;
+}
+
+.contact-form .field [type="file"] {
+  background-color: transparent;
+  border-radius: 0;
+  padding-left: 0;
+}
+.contact-form ul.actions {
+  padding: 0;
+  margin: 20px 0px;
+}
+.contact-form ul li {
+  display: inline-block;
+  width: 50%;
+}
+.contact-form ul li:first-child {
+  padding-right: 20px;
+}
+.contact100-form-btn,
+.contact100-clear-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background: #35833f;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  display: inline-block;
+  padding: 0 25px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  outline: none !important;
+  border: 2px solid transparent;
+}
+
+@media only screen and (max-width: 800px) {
+  .contact100-form-btn,
+  .contact100-clear-btn {
+    font-size: 1rem;
+  }
+}
+
+.contact100-clear-btn {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: normal;
+  background: transparent;
+  color: #dbdbdb;
+  border: 2px solid #35833f;
+}
+
+.contact100-form-btn:hover {
+  background: transparent;
+  color: #35833f;
+  border: 2px solid #35833f;
+}
+
+.contact100-clear-btn {
+  color: #35833f;
+}
+
+.contact100-clear-btn:hover {
+  background: #35833f;
+  color: #fff;
+}
+
+.input100:focus + .focus-input100 {
+  -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
+  animation: anim-shadow 0.5s ease-in-out forwards;
+}
+
+.focus-input100 {
+  display: block;
+  position: absolute;
+  border-radius: 25px;
+  top: 28px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0px 0px 0px 0px;
+  color: #33a1d8;
+}

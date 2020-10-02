@@ -1,0 +1,18 @@
+.title-with-selections {
+  display: block;
+  margin: 50px auto;
+
+  &--header {
+    font-size: $fontsize-large;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  & .selections-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 70vw;
+    width: 100%;
+  }
+}

@@ -1,0 +1,29 @@
+.button {
+  background: none;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-image-source: $gradient-button;
+  border-width: 5px;
+  color: $color-primary;
+  font-size: $fontsize-medium;
+  padding: 1rem 2rem;
+  text-align: center;
+  width: 500px;
+
+  &:hover {
+    background-image: $gradient-button;
+    color: white;
+    text-decoration: none;
+  }
+
+  &.highlighted {
+    background-image: $gradient-button;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      background: none;
+      color: $color-primary;
+    }
+  }
+}

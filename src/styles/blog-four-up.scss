@@ -1,0 +1,32 @@
+.blog-four-up {
+  background-color: $color-dark;
+  display: flex;
+  flex-wrap: wrap;
+  margin: $spacing-large auto 0 auto;
+  padding: $spacing-standard;
+  width: 100%;
+
+  &--header {
+    color: $color-light;
+    flex-basis: 100%;
+    font-size: $fontsize-large;
+    margin-bottom: $spacing-large;
+  }
+
+  &--blog-list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  & .blog-listing {
+    width: 40%;
+  }
+
+  & .post-social {
+    & .button {
+      width: 20px;
+    }
+  }
+}
