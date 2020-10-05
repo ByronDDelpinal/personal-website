@@ -11,30 +11,6 @@ const BlogPreview = props => {
   const MAX_LENGTH_TITLE = 80;
   const { blogPost } = props;
 
-  // Creates a document from a Contenful Rich Text Field
-  const blogSummary = {
-    nodeType: 'document',
-    data: {},
-    content: blogPost.contentSummary.json.content || [],
-  };
-
-  // Overrides the way we handle the inline hypertext item in a document. This
-  // adds outbound linking so we can track if traffic is actually going to
-  // the businesses signing up
-  const blogSummaryOptions = {
-    renderNode: {
-      [INLINES.HYPERLINK]: (node, children) => (
-        <OutboundLink
-          href={node.data.uri}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {children}
-        </OutboundLink>
-      ),
-    },
-  };
-
   console.log(blogPost);
 
   return (
@@ -66,10 +42,7 @@ const BlogPreview = props => {
         </h2>
         <p className="business-type">{blogPost.type}</p>
         <div className="entry-content">
-          {documentToReactComponents(
-            blogSummary,
-            blogSummaryOptions
-          )}
+          {blogPost.contentSummary}
         </div>
       </div>
     </article>

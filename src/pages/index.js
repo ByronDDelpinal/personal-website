@@ -77,19 +77,15 @@ export const query = graphql`
         image {
           fluid {
             aspectRatio
-            base64
             sizes
             src
             srcSet
             srcSetWebp
             srcWebp
-            tracedSVG
           }
           description
         }
-        contentSummary {
-          json
-        }
+        contentSummary
         content {
           content
         }

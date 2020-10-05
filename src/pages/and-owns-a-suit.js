@@ -102,7 +102,10 @@ export const query = graphql`
         description
       }
     }
-    allContentfulBlogPost(limit: 4) {
+    allContentfulBlogPost(
+      filter: { category: { eq: "Technical" } }
+      limit: 4
+    ) {
       nodes {
         id
         category
@@ -115,19 +118,15 @@ export const query = graphql`
         image {
           fluid {
             aspectRatio
-            base64
             sizes
             src
             srcSet
             srcSetWebp
             srcWebp
-            tracedSVG
           }
           description
         }
-        contentSummary {
-          json
-        }
+        contentSummary
         content {
           content
         }

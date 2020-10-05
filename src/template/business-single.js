@@ -10,30 +10,23 @@ import { INLINES } from '@contentful/rich-text-types';
 import Layout from '../components/layout';
 import websiteLogo from '../images/website-logo.png';
 
-class BusinessTemplate extends Component {
+class BlogPostTemplate extends Component {
   render() {
-    const business = this.props.data.contentfulBlogPost;
-    const relatedBusinesses = this.props.data.allContentfulBlogPost.nodes;
-    const anyRelatedBusinesses = relatedBusinesses.length > 0;
+    const blogPost = this.props.data.contentfulBlogPost;
+    const relatedBlogPosts = this.props.data.allContentfulBlogPost.nodes;
+    const anyRelatedBlogPosts = relatedBlogPosts.length > 0;
 
     // Creates a document from a Contenful Rich Text Field
-    const businessStory = {
+    const blogPostContent = {
       nodeType: 'document',
       data: {},
-      content: business.contentSummary.json.content || [],
-    };
-
-    // Creates a document from a Contenful Rich Text Field
-    const businessSupportFull = {
-      nodeType: 'document',
-      data: {},
-      content: business.content.json.content || [],
+      content: blogPost.content.json.content || [],
     };
 
     // Overrides the way we handle the inline hypertext item in a document. This
     // adds outbound linking so we can track if traffic is actually going to
     // the businesses signing up
-    const businessSupportOptions = {
+    const blogPostOptions = {
       renderNode: {
         [INLINES.HYPERLINK]: (node, children) => (
           <OutboundLink
@@ -50,32 +43,27 @@ class BusinessTemplate extends Component {
     return (
       <Layout>
         <Helmet
-          title={`Support ${business.name} during the COVID-19 pandemic!`}
+          title={`${blogPost.name} | Byron Delpinal`}
           meta={[
             {
               name: 'description',
-              content: `Our local businesses are the heart and soul of our communities. Now that they've been affected by the COVID-19 pandemic it's time to show up and support them. See how to support ${business.name} here!`,
-            },
-            {
-              name: 'keywords',
-              content:
-                'local business, shop local, akron, ohio, small business, entrepreneur',
+              content: blogPost.contentSummary,
             },
             {
               property: 'og:title',
-              content: `Support ${business.name} during the COVID-19 pandemic!`,
+              content: `${blogPost.name} | Byron Delpinal`,
             },
             {
               property: 'og:description',
-              content: `Our local businesses are the heart and soul of our communities. Now that they've been affected by the COVID-19 pandemic it's time to show up and support them. See how to support ${business.name} here!`,
+              content: blogPost.contentSummary,
             },
             {
               property: 'og:image',
-              content: `${business.image.fluid.src}`,
+              content: `${blogPost.image.fluid.src}`,
             },
             {
               property: 'og:url',
-              content: `https://supportlocalakron.com/${business.urlName}`,
+              content: `https://byron.codes/and-writes/${blogPost.urlName}`,
             },
             {
               property: 'og:type',
@@ -87,11 +75,11 @@ class BusinessTemplate extends Component {
             },
             {
               name: 'twitter:title',
-              content: `Support ${business.name} during the COVID-19 pandemic!`,
+              content: `${blogPost.name} | Byron Delpinal`,
             },
             {
               name: 'twitter:image',
-              content: `${business.image.fluid.src}`,
+              content: `${blogPost.image.fluid.src}`,
             },
           ]}
         />
@@ -101,63 +89,59 @@ class BusinessTemplate extends Component {
             <div className="row">
               <div className="post-content top-content">
                 <div class="post-left-content">
-                  <h2 className="section-headline"> {business.name} </h2>
-                  <p className="business-type">{business.type}</p>
+                  <h2 className="section-headline"> {blogPost.name} </h2>
+                  <p className="business-type">{blogPost.type}</p>
                 </div>
               </div>
-              {/* if we have related businesses, make room for the sidebar */}
+              {/* if we have related blog posts, make room for the sidebar */}
               <div
-                className={`${anyRelatedBusinesses ? 'col-md-8' : 'col-md-12'}`}
+                className={`${anyRelatedBlogPosts ? 'col-md-8' : 'col-md-12'}`}
               >
                 <div className="entry-media">
                   <Img
                     backgroundColor={'#f4f8fb'}
-                    fluid={business.image.fluid}
+                    fluid={blogPost.image.fluid}
                     objectFit="none"
                   />
                 </div>
                 <div className="post-content">
                   <div className="business-content">
-                    <h3>Our Story</h3>
-                    {documentToReactComponents(
-                      businessStory,
-                      businessSupportOptions
-                    )}
+                    <h3>TL;DR</h3>
+                    <p>{blogPost.contentSummary}</p>
                   </div>
                   <div className="business-content">
-                    <h3>How To Support Us</h3>
+                    <h3>The Content</h3>
                     {documentToReactComponents(
-                      businessSupportFull,
-                      businessSupportOptions
+                      blogPostContent,
+                      blogPostOptions
                     )}
                   </div>
                 </div>
               </div>
               {/* Sidebar Stuff Goes Here, need to change back to col-lg-7 col-md-7 */}
-              {anyRelatedBusinesses ? (
+              {anyRelatedBlogPosts ? (
                 <div className="col-md-4">
                   <div className="sidebar-blk">
-                    <h4>Related Listings</h4>
+                    <h4>Related Posts</h4>
                     <p>
                       While you're here, be sure to check out these other{' '}
-                      <span className="category">{business.category}</span>{' '}
+                      <span className="category">{blogPost.category}</span>{' '}
                       listings!
                     </p>
                     <ul className="related-business-list">
-                      {relatedBusinesses.map(relatedBusiness => (
-                        <li key={relatedBusiness.id}>
-                          <Link to={relatedBusiness.urlName}>
+                      {relatedBlogPosts.map(relatedBlogPost => (
+                        <li key={relatedBlogPost.id}>
+                          <Link to={relatedBlogPost.urlName}>
                             <Img
                               className="related-image"
-                              fluid={relatedBusiness.image.fluid}
+                              fluid={relatedBlogPost.image.fluid}
                               objectFit="cover"
                             />
                           </Link>
                           <div class="related-information">
-                            <Link to={relatedBusiness.urlName}>
-                              <span>{relatedBusiness.name}</span>
+                            <Link to={relatedBlogPost.urlName}>
+                              <span>{relatedBlogPost.name}</span>
                             </Link>
-                            {/*<span class="meta">{relatedBusiness.type}</span>*/}
                           </div>
                         </li>
                       ))}
@@ -173,18 +157,16 @@ class BusinessTemplate extends Component {
   }
 }
 
-export default BusinessTemplate;
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query businessQuery($category: String, $urlName: String) {
+  query blogPostTemplateQuery($category: String, $urlName: String) {
     contentfulBlogPost(urlName: { eq: $urlName }) {
       category
       content {
         json
       }
-      contentSummary {
-        json
-      }
+      contentSummary
       id
       image {
         title
@@ -195,9 +177,7 @@ export const pageQuery = graphql`
           srcSetWebp
           sizes
           srcWebp
-          base64
           aspectRatio
-          tracedSVG
         }
       }
       name
@@ -218,9 +198,7 @@ export const pageQuery = graphql`
             srcSetWebp
             sizes
             srcWebp
-            base64
             aspectRatio
-            tracedSVG
           }
         }
         name
