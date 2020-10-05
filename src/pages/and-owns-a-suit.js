@@ -104,29 +104,32 @@ export const query = graphql`
     }
     allContentfulBlogPost(limit: 4) {
       nodes {
-        category
         id
+        category
         name
         urlName
-        content {
-          json
+        isExternal
+        publishedDate
+        externalUrl
+        externalSourceName
+        image {
+          fluid {
+            aspectRatio
+            base64
+            sizes
+            src
+            srcSet
+            srcSetWebp
+            srcWebp
+            tracedSVG
+          }
+          description
         }
         contentSummary {
           json
         }
-        image {
-          title
-          description
-          fluid {
-            src
-            srcSet
-            srcSetWebp
-            sizes
-            srcWebp
-            base64
-            aspectRatio
-            tracedSVG
-          }
+        content {
+          content
         }
       }
     }

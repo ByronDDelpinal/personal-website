@@ -35,13 +35,26 @@ const BlogPreview = props => {
     },
   };
 
+  console.log(blogPost);
+
   return (
     <article className="blog-listing" key={blogPost.urlName}>
       <div className="entry-meta-content">
         <div className="entry-media">
-          <Link to={blogPost.urlName}>
-            <Img fluid={blogPost.image.fluid} backgroundColor={'#f4f8fb'} />
-          </Link>
+          {blogPost.isExternal
+            ?
+              <OutboundLink
+                href={blogPost.externalUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Img fluid={blogPost.image.fluid} backgroundColor={'#f4f8fb'} />
+              </OutboundLink>
+            :
+              <Link to={`/and-writes/${blogPost.urlName}`}>
+                <Img fluid={blogPost.image.fluid} backgroundColor={'#f4f8fb'} />
+              </Link>
+          }
         </div>
         <h2 className="entry-title">
           <Link to={blogPost.urlName}>

@@ -167,30 +167,33 @@ export const pageQuery = graphql`
     }
     allContentfulBlogPost {
       nodes {
+        id
         category
-      id
-      name
-      urlName
-      content {
-        json
-      }
-      contentSummary {
-        json
-      }
-      image {
-        title
-        description
-        fluid {
-          src
-          srcSet
-          srcSetWebp
-          sizes
-          srcWebp
-          base64
-          aspectRatio
-          tracedSVG
+        name
+        urlName
+        isExternal
+        publishedDate
+        externalUrl
+        externalSourceName
+        image {
+          fluid {
+            aspectRatio
+            base64
+            sizes
+            src
+            srcSet
+            srcSetWebp
+            srcWebp
+            tracedSVG
+          }
+          description
         }
-      }
+        contentSummary {
+          json
+        }
+        content {
+          content
+        }
       }
     }
   }
