@@ -11,8 +11,6 @@ const BlogPreview = props => {
   const MAX_LENGTH_TITLE = 80;
   const { blogPost } = props;
 
-  console.log(blogPost);
-
   return (
     <article className="blog-listing" key={blogPost.urlName}>
       <div className="entry-meta-content">

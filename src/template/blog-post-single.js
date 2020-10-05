@@ -16,6 +16,9 @@ class BlogPostTemplate extends Component {
     const relatedBlogPosts = this.props.data.allContentfulBlogPost.nodes;
     const anyRelatedBlogPosts = relatedBlogPosts.length > 0;
 
+    // Stops this process if it's external, since we won't have most of what we need.
+    if (blogPost.isExternal) { return null; }
+
     // Creates a document from a Contenful Rich Text Field
     const blogPostContent = {
       nodeType: 'document',

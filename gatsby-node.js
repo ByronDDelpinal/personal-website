@@ -8,22 +8,25 @@ exports.createPages = ({ graphql, actions }) => {
       allContentfulBlogPost {
         nodes {
           category
+          isExternal
           urlName
         }
       }
     }
   `).then(result => {
-    result.data.allContentfulBlogPost.nodes.forEach(business => {
-      createPage({
-        path: `/and-writes/${business.urlName}`,
-        component: path.resolve(`./src/template/business-single.js`),
-        context: {
-          category: business.category,
-          urlName: business.urlName
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
-        },
-      })
+    result.data.allContentfulBlogPost.nodes.forEach(blogPost => {
+      if (!blogPost.isExternal) {
+        createPage({
+          path: `/and-writes/${blogPost.urlName}`,
+          component: path.resolve(`./src/template/blog-post-single.js`),
+          context: {
+            category: blogPost.category,
+            urlName: blogPost.urlName
+            // Data passed to context is available
+            // in page queries as GraphQL variables.
+          },
+        })
+      }
     })
   })
 }
