@@ -5,7 +5,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allContentfulBusinesses {
+      allContentfulBlogPost {
         nodes {
           category
           urlName
@@ -13,7 +13,7 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
-    result.data.allContentfulBusinesses.nodes.forEach(business => {
+    result.data.allContentfulBlogPost.nodes.forEach(business => {
       createPage({
         path: business.urlName,
         component: path.resolve(`./src/template/business-single.js`),

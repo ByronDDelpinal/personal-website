@@ -12,22 +12,22 @@ import websiteLogo from '../images/website-logo.png';
 
 class BusinessTemplate extends Component {
   render() {
-    const business = this.props.data.contentfulBusinesses;
-    const relatedBusinesses = this.props.data.allContentfulBusinesses.nodes;
+    const business = this.props.data.contentfulBlogPost;
+    const relatedBusinesses = this.props.data.allContentfulBlogPost.nodes;
     const anyRelatedBusinesses = relatedBusinesses.length > 0;
 
     // Creates a document from a Contenful Rich Text Field
     const businessStory = {
       nodeType: 'document',
       data: {},
-      content: business.story ? business.story.json.content : [],
+      content: business.contentSummary.json.content || [],
     };
 
     // Creates a document from a Contenful Rich Text Field
     const businessSupportFull = {
       nodeType: 'document',
       data: {},
-      content: business.supportFull ? business.supportFull.json.content : [],
+      content: business.content.json.content || [],
     };
 
     // Overrides the way we handle the inline hypertext item in a document. This
@@ -104,21 +104,6 @@ class BusinessTemplate extends Component {
                   <h2 className="section-headline"> {business.name} </h2>
                   <p className="business-type">{business.type}</p>
                 </div>
-                <p className="business-type website">
-                  <img
-                    className="website-logo"
-                    src={websiteLogo}
-                    alt="laptop computer"
-                  />
-                  <OutboundLink
-                    className="business-website"
-                    href={business.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Our Website
-                  </OutboundLink>
-                </p>
               </div>
               {/* if we have related businesses, make room for the sidebar */}
               <div
@@ -192,50 +177,50 @@ export default BusinessTemplate;
 
 export const pageQuery = graphql`
   query businessQuery($category: String, $urlName: String) {
-    contentfulBusinesses(urlName: { eq: $urlName }) {
+    contentfulBlogPost(urlName: { eq: $urlName }) {
       category
+      content {
+        json
+      }
+      contentSummary {
+        json
+      }
       id
       image {
-        file {
-          url
-        }
-        fluid(maxWidth: 1800) {
-          aspectRatio
+        title
+        description
+        fluid {
           src
           srcSet
-          srcWebp
           srcSetWebp
           sizes
+          srcWebp
+          base64
+          aspectRatio
+          tracedSVG
         }
       }
       name
-      story {
-        json
-      }
-      supportFull {
-        json
-      }
-      type
       urlName
-      website
     }
 
-    allContentfulBusinesses(
+    allContentfulBlogPost(
       filter: { category: { eq: $category }, urlName: { ne: $urlName } }
       limit: 5
     ) {
       nodes {
         image {
-          file {
-            url
-          }
-          fluid(maxWidth: 1800) {
-            aspectRatio
+          title
+          description
+          fluid {
             src
             srcSet
-            srcWebp
             srcSetWebp
             sizes
+            srcWebp
+            base64
+            aspectRatio
+            tracedSVG
           }
         }
         name

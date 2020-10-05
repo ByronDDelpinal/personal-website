@@ -9,21 +9,19 @@ import Share from './Share';
 
 const BlogPreview = props => {
   const MAX_LENGTH_TITLE = 80;
-  const { business } = props;
+  const { blogPost } = props;
 
   // Creates a document from a Contenful Rich Text Field
-  const businessSupportSummary = {
+  const blogSummary = {
     nodeType: 'document',
     data: {},
-    content: business.supportSummary
-      ? business.supportSummary.json.content
-      : [],
+    content: blogPost.contentSummary.json.content || [],
   };
 
   // Overrides the way we handle the inline hypertext item in a document. This
   // adds outbound linking so we can track if traffic is actually going to
   // the businesses signing up
-  const businessSupportSummaryOptions = {
+  const blogSummaryOptions = {
     renderNode: {
       [INLINES.HYPERLINK]: (node, children) => (
         <OutboundLink
@@ -38,47 +36,28 @@ const BlogPreview = props => {
   };
 
   return (
-    <article className="blog-listing" key={business.urlName}>
+    <article className="blog-listing" key={blogPost.urlName}>
       <div className="entry-meta-content">
         <div className="entry-media">
-          <Link to={business.urlName}>
-            <Img fluid={business.image.fluid} backgroundColor={'#f4f8fb'} />
+          <Link to={blogPost.urlName}>
+            <Img fluid={blogPost.image.fluid} backgroundColor={'#f4f8fb'} />
           </Link>
         </div>
         <h2 className="entry-title">
-          <Link to={business.urlName}>
+          <Link to={blogPost.urlName}>
             {' '}
-            {business.name > MAX_LENGTH_TITLE
-              ? business.name
-              : business.name.substring(0, MAX_LENGTH_TITLE)}{' '}
+            {blogPost.name > MAX_LENGTH_TITLE
+              ? blogPost.name
+              : blogPost.name.substring(0, MAX_LENGTH_TITLE)}{' '}
           </Link>
         </h2>
-        <p className="business-type">{business.type}</p>
+        <p className="business-type">{blogPost.type}</p>
         <div className="entry-content">
           {documentToReactComponents(
-            businessSupportSummary,
-            businessSupportSummaryOptions
+            blogSummary,
+            blogSummaryOptions
           )}
         </div>
-      </div>
-
-      <div className="entry-content-bottom">
-        <Share
-          socialConfig={{
-            config: {
-              url: `https://supportlocalakron.com/${business.urlName}`,
-              quote:
-                `I'm supporting ${business.name} because I think they're awesome and you should too! Find out how with #SupportLocalAkron`,
-              hashtag: 'SupportLocalAkron',
-              title: `Support ${business.name} During The COVID-19 Pandemic`,
-            },
-            isMinimal: true
-          }}
-        />
-        <Link to={business.urlName} className="entry-read-more">
-          <span />
-          Support
-        </Link>
       </div>
     </article>
   );

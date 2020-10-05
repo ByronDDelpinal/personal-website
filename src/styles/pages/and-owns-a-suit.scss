@@ -1,0 +1,25 @@
+.and-owns-a-suit-page {
+  & > section {
+    margin: $spacing-standard 0;
+    padding: 0 $spacing-standard;
+
+    &.professional-writing {
+      background-color: $color-dark;
+      padding: 0;
+    }
+  }
+
+  & .current-status {
+    &--block {
+      display: inline-block;
+
+      & h3 {
+        display: inline-block;
+      }
+
+      & p {
+        display: inline-block;
+      }
+    }
+  }
+}

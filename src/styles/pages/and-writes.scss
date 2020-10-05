@@ -1,0 +1,11 @@
+/** Page **/
+.and-writes-page {
+  & .main-content {
+    background-color: $color-dark;
+  }
+
+  & .section-title {
+    color: $color-light;
+    margin-bottom: 0;
+  }
+}

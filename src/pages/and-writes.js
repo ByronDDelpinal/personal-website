@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import BlogPreviewList from '../components/blog-preview-list';
 import { graphql } from 'gatsby';
 
-function BusinessIndex(props) {
+function BlogPostIndex(props) {
   /**
    * Gets all of the unique categories from the list of business objects.
    * It also adds "All" to the beginning and sets it to active as a page default.
@@ -15,8 +15,8 @@ function BusinessIndex(props) {
    */
   const getUniqueCategories = () => {
     const allCategories = Array.from(
-      props.data.allContentfulBusinesses.nodes
-    ).map(business => business.category);
+      props.data.allContentfulBlogPost.nodes
+    ).map(blogPost => blogPost.category);
 
     allCategories.unshift('all');
 
@@ -56,29 +56,29 @@ function BusinessIndex(props) {
    *
    * @param {string} categoryName - The name of the category
    */
-  const filterBusinesses = categoryName => {
+  const filterBlogPosts = categoryName => {
     const sortByElement = document.querySelector('#sort-by');
 
     // Handle "All" separately since it's a reset
     if (categoryName === 'all') {
       // This goes back to the default
       setCategoryToActive(categoryName);
-      setBusinesses(props.data.allContentfulBusinesses.nodes);
+      setBlogPosts(props.data.allContentfulBlogPost.nodes);
       // This resets the sort for the user since that's not handled by the filter
       if (sortByElement) sortByElement.value = '';
       return;
     }
 
-    const allBusinesses = Array.from(props.data.allContentfulBusinesses.nodes);
+    const allBlogPosts = Array.from(props.data.allContentfulBlogPost.nodes);
 
-    const filteredBusinesses = allBusinesses.filter(
-      business => business.category.toLowerCase() === categoryName.toLowerCase()
+    const filteredBlogPosts = allBlogPosts.filter(
+      blogPost => blogPost.category.toLowerCase() === categoryName.toLowerCase()
     );
 
     if (sortByElement) sortByElement.value = '';
 
     setCategoryToActive(categoryName);
-    setBusinesses(filteredBusinesses);
+    setBlogPosts(filteredBlogPosts);
   };
 
   /**
@@ -88,14 +88,14 @@ function BusinessIndex(props) {
    *
    * @param {string} direction - asc/desc/null
    */
-  const sortBusinesses = direction => {
+  const sortBlogPosts = direction => {
     if (!direction) {
       // This goes back to the default
-      setBusinesses(props.data.allContentfulBusinesses.nodes);
+      setBlogPosts(props.data.allContentfulBlogPost.nodes);
       return;
     }
 
-    const sortedBusinesses = Array.from(businesses).sort((a, b) => {
+    const sortedBlogPosts = Array.from(blogPosts).sort((a, b) => {
       const nameA = a.name.toUpperCase(); // ignore upper and lowercase
       const nameB = b.name.toUpperCase(); // ignore upper and lowercase
 
@@ -112,28 +112,28 @@ function BusinessIndex(props) {
       return 0;
     });
 
-    setBusinesses(sortedBusinesses);
+    setBlogPosts(sortedBlogPosts);
   };
 
-  const siteTitle = `${props.data.site.siteMetadata.title} | Businesses`;
-  const [businesses, setBusinesses] = useState(
-    props.data.allContentfulBusinesses.nodes
+  const siteTitle = `${props.data.site.siteMetadata.title} | Blogs`;
+  const [blogPosts, setBlogPosts] = useState(
+    props.data.allContentfulBlogPost.nodes
   );
   const [categories, setCategories] = useState(getUniqueCategories());
 
   return (
-    <div class="business-index-page">
+    <div class="and-writes-page">
       <Helmet title={siteTitle} />
       <Layout>
         <div className="container">
           <div className="text-center pad-20">
-  <h2 className="section-title">{businesses.length} Local Listings</h2>
+  <h2 className="section-title">{blogPosts.length} Uninteresting Conjectures</h2>
           </div>
           <div className="facets">
             {categories.map(category => (
               <button
                 className={`facet${category.selected ? ' selected' : ''}`}
-                onClick={() => filterBusinesses(category.name)}
+                onClick={() => filterBlogPosts(category.name)}
               >
                 {category.name}
               </button>
@@ -141,54 +141,56 @@ function BusinessIndex(props) {
             <select
               className="facet"
               id="sort-by"
-              onChange={event => sortBusinesses(event.target.value)}
+              onChange={event => sortBlogPosts(event.target.value)}
             >
               <option value="">Sort By ▼</option>
               <option value="asc">Sort: A-Z</option>
               <option value="desc">Sort: Z-A</option>
             </select>
           </div>
-          <BlogPreviewList businesses={businesses} />
+          <BlogPreviewList blogPosts={blogPosts} />
         </div>
       </Layout>
     </div>
   );
 }
 
-export default BusinessIndex;
+export default BlogPostIndex;
 
 export const pageQuery = graphql`
-  query LocalBusinessQuery {
+  query BlogPostIndexQuery {
     site {
       siteMetadata {
         title
         description
       }
     }
-    allContentfulBusinesses {
+    allContentfulBlogPost {
       nodes {
         category
-        id
-        name
-        image {
-          file {
-            url
-          }
-          fluid(maxWidth: 1800) {
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
-          }
+      id
+      name
+      urlName
+      content {
+        json
+      }
+      contentSummary {
+        json
+      }
+      image {
+        title
+        description
+        fluid {
+          src
+          srcSet
+          srcSetWebp
+          sizes
+          srcWebp
+          base64
+          aspectRatio
+          tracedSVG
         }
-        supportSummary {
-          json
-        }
-        type
-        urlName
-        website
+      }
       }
     }
   }

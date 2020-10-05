@@ -4,6 +4,10 @@
 }
 @import './variables.scss';
 
+/******** PAGES ********/
+@import './pages/and-owns-a-suit.scss';
+
+/******** COMPONENTS ********/
 @import './blog-four-up.scss';
 @import './button.scss';
 @import './footer.scss';
@@ -682,20 +686,6 @@ h4.success-msg {
 }
 
 /******** Business Index ********/
-
-/** Page **/
-.business-index-page {
-  & .main-content {
-    background-color: $color-dark;
-  }
-}
-
-.business-index-page .section-title {
-  color: $color-light;
-  margin-bottom: 0;
-}
-/*/ Page /*/
-
 /** Facets **/
 .facets {
   display: flex;

@@ -6,6 +6,10 @@
   padding: $spacing-standard;
   width: 100%;
 
+  &--description {
+    color: $color-light;
+  }
+
   &--header {
     color: $color-light;
     flex-basis: 100%;

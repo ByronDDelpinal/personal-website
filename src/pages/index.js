@@ -8,7 +8,7 @@ import BlogPreview from '../components/blog-preview';
 import Layout from '../components/layout';
 
 const IndexPage = props => {
-  const businesses = props.data.allContentfulBusinesses.nodes;
+  const blogPosts = props.data.allContentfulBlogPost.nodes;
   const siteTitle = props.data.site.siteMetadata.title;
 
   return (
@@ -22,7 +22,12 @@ const IndexPage = props => {
           <section className="title-with-selections">
             <h3 className="title-with-selections--header">Whatcha looking for?</h3>
             <div className="selections-container">
-              <a className="button" href="/">Here For Business</a>
+              <Link
+                to="/and-owns-a-suit"
+                className="button">
+                <span />
+                Here For Business
+              </Link>
               <a className="button" href="/">Keeping It Personal</a>
             </div>
           </section>
@@ -31,13 +36,13 @@ const IndexPage = props => {
               #OldManRants
             </h2>
             <div className="blog-four-up--blog-list">
-              {businesses.map(business => {
+              {blogPosts.map(blogPost => {
                 return (
-                  <BlogPreview business={business} />
+                  <BlogPreview blogPost={blogPost} />
                 );
               })}
               <Link
-                to="/business"
+                to="/and-writes"
                 className="button highlighted">
                 <span />
                 See All
@@ -59,29 +64,32 @@ export const query = graphql`
         description
       }
     }
-    allContentfulBusinesses(limit: 4) {
+    allContentfulBlogPost(limit: 4) {
       nodes {
+        category
         id
         name
-        image {
-          file {
-            url
-          }
-          fluid(maxWidth: 1800) {
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
-          }
-        }
-        supportSummary {
+        urlName
+        content {
           json
         }
-        type
-        urlName
-        website
+        contentSummary {
+          json
+        }
+        image {
+          title
+          description
+          fluid {
+            src
+            srcSet
+            srcSetWebp
+            sizes
+            srcWebp
+            base64
+            aspectRatio
+            tracedSVG
+          }
+        }
       }
     }
   }

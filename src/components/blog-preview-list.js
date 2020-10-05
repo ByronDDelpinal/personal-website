@@ -5,14 +5,14 @@ import BlogPreview from './blog-preview';
 function BlogPreviewList(props) {
   return (
     <ul className="article-list row">
-      {props.businesses.map(business => {
+      {props.blogPosts.map(blogPost => {
         return (
           <li
-            data-type={business.type}
-            key={business.urlName}
+            data-type={blogPost.type}
+            key={blogPost.urlName}
             className="col-lg-6"
           >
-            <BlogPreview business={business} />
+            <BlogPreview blogPost={blogPost} />
           </li>
         );
       })}
