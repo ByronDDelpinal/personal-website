@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React from 'react';
 
-import Share from './Share';
+import Share from './share';
 
 const BlogPreview = props => {
   const MAX_LENGTH_TITLE = 80;
