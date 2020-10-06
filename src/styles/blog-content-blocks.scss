@@ -1,0 +1,8 @@
+.blog-content-block {
+  margin-top: $spacing-large;
+
+  & > .gatsby-image-wrapper {
+    margin-bottom: $spacing-standard;
+    width: 60vw;
+  }
+}

@@ -8,40 +8,51 @@ import React, { Component } from 'react';
 
 import { INLINES } from '@contentful/rich-text-types';
 import Layout from '../components/layout';
+import BlogContentBlock from '../components/blog-content-block';
 import websiteLogo from '../images/website-logo.png';
+
+// Overrides the way we handle the inline hypertext item in a document. This
+// adds outbound linking so we can track if traffic is actually going to
+// the businesses signing up
+const blogPostOptions = {
+  renderNode: {
+    [INLINES.HYPERLINK]: (node, children) => (
+      <OutboundLink
+        href={node.data.uri}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        {children}
+      </OutboundLink>
+    ),
+  },
+};
+
+const getRichTextContent = jsonContent => {
+  // Creates a document from a Contenful Rich Text Field
+  const blogPostContent = {
+    nodeType: 'document',
+    data: {},
+    content: jsonContent || [],
+  };
+
+  return documentToReactComponents(
+    blogPostContent,
+    blogPostOptions
+  )
+}
 
 class BlogPostTemplate extends Component {
   render() {
     const blogPost = this.props.data.contentfulBlogPost;
+    const hasContentBlocks = blogPost.contentBlocks && blogPost.contentBlocks.length > 0;
     const relatedBlogPosts = this.props.data.allContentfulBlogPost.nodes;
     const anyRelatedBlogPosts = relatedBlogPosts.length > 0;
 
+    console.log(hasContentBlocks);
+
     // Stops this process if it's external, since we won't have most of what we need.
     if (blogPost.isExternal) { return null; }
-
-    // Creates a document from a Contenful Rich Text Field
-    const blogPostContent = {
-      nodeType: 'document',
-      data: {},
-      content: blogPost.content.json.content || [],
-    };
-
-    // Overrides the way we handle the inline hypertext item in a document. This
-    // adds outbound linking so we can track if traffic is actually going to
-    // the businesses signing up
-    const blogPostOptions = {
-      renderNode: {
-        [INLINES.HYPERLINK]: (node, children) => (
-          <OutboundLink
-            href={node.data.uri}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {children}
-          </OutboundLink>
-        ),
-      },
-    };
 
     return (
       <Layout>
@@ -114,10 +125,12 @@ class BlogPostTemplate extends Component {
                   </div>
                   <div className="business-content">
                     <h3>The Content</h3>
-                    {documentToReactComponents(
-                      blogPostContent,
-                      blogPostOptions
-                    )}
+                    {getRichTextContent(blogPost.content.json.content || [])}
+                    {hasContentBlocks &&
+                      blogPost.contentBlocks.map(contentBlock => (
+                        <BlogContentBlock content={contentBlock}/>
+                      ))
+                    }
                   </div>
                 </div>
               </div>
@@ -170,6 +183,25 @@ export const pageQuery = graphql`
         json
       }
       contentSummary
+      contentBlocks {
+        id
+        image {
+          fluid {
+            aspectRatio
+            sizes
+            src
+            srcSetWebp
+            srcSet
+            srcWebp
+            tracedSVG
+          }
+          title
+          description
+        }
+        content {
+          json
+        }
+      }
       id
       image {
         title
