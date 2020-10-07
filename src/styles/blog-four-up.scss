@@ -1,9 +1,9 @@
 .blog-four-up {
-  background-color: $color-dark;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: $spacing-large auto 0 auto;
-  padding: $spacing-standard;
+  padding: $spacing-medium;
   width: 100%;
 
   &--description {
@@ -11,10 +11,15 @@
   }
 
   &--header {
-    color: $color-light;
+    border-bottom: 3px dashed $color-secondary;
+    color: $color-dark;
     flex-basis: 100%;
     font-size: $fontsize-large;
     margin-bottom: $spacing-large;
+
+    &.light {
+      color: $color-light;
+    }
   }
 
   &--blog-list {
@@ -22,6 +27,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+
+  & .button {
+    margin-top: $spacing-large;
+    width: 31%;
   }
 
   & .blog-listing {

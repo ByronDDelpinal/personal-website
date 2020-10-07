@@ -1,8 +1,6 @@
-@font-face {
-  font-family: 'Josefin Sans';
-  src: url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&display=swap)
-}
-@import './variables.scss';
+@import './_variables.scss';
+@import './_reset.scss';
+@import './_typography.scss';
 
 /******** PAGES ********/
 @import './pages/and-owns-a-suit.scss';
@@ -10,12 +8,13 @@
 /******** COMPONENTS ********/
 @import './blog-content-blocks';
 @import './blog-four-up.scss';
+@import './blog-preview';
+@import './blog-preview-list';
 @import './button.scss';
 @import './footer.scss';
 @import './header.scss';
 @import './hero.scss';
 @import './contact';
-@import './reset.scss';
 @import './title-with-selection.scss';
 
 body {
@@ -56,6 +55,10 @@ img {
 .main-content {
   margin-top: $header-border-width;
   min-height: calc(100vh - #{$footer-height} - #{$header-height} - #{$header-border-width});
+
+  &.no-header {
+    margin-top: 0;
+  }
 }
 
 section {
@@ -65,7 +68,6 @@ section {
 .about-us h4 {
   font-size: 30px;
   font-family: "Josefin Sans", sans-serif;
-  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -173,7 +175,6 @@ section {
 .name {
   font-family: "Josefin Sans", sans-serif;
   font-size: 36px;
-  font-weight: 900;
 }
 
 .greetings {
@@ -313,74 +314,20 @@ h2.section-title:after {
   margin: 20px auto 0 auto;
 }
 
-article.blog-listing h2.entry-title {
-  padding-bottom: 0 !important;
-  padding-top: 0 !important;
-}
-
-article.blog-listing h2.entry-title a {
-  font-size: 20px;
-  color: #35833f;
-  font-family: "Josefin Sans", sans-serif;
-  text-decoration: none;
-}
-article.blog-listing h2.entry-title {
-  line-height: 20px;
-  margin-bottom: 0px;
-}
-
-article.blog-listing {
-  background-color: #fdfdfd;
-  box-shadow: 0.3rem 0.4rem 2.4rem rgba(0, 0, 0, 0.2);
-  margin-bottom: 50px;
-}
-
-article.blog-listing .business-type {
-  color: #808285;
-  font-size: 0.9rem;
-  padding: 0 20px;
-}
-
-article.blog-listing .entry-meta-content h2,
-article.blog-listing .entry-content {
-  padding: 0 20px;
-}
-
-article.blog-listing .entry-media {
-  padding: 20px;
-}
-
-article.blog-listing .entry-meta-content h2 {
-  padding-bottom: 5px;
-  padding-top: 10px;
-}
-
-article.blog-listing .entry-meta-content a {
-  color: #35833f;
-}
-
-article.blog-listing .gatsby-image-wrapper {
-  max-height: 200px !important;
-}
-
-article.blog-listing .entry-content-bottom {
-  padding: 10px 20px;
-}
-
 a.entry-read-more {
   text-align: right;
-  display: inline-block;
+  display: block;
   font-family: "Josefin Sans", sans-serif;
   font-weight: bold;
   width: 100%;
-  color: #35833f;
+  color: $color-primary;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 18px;
 }
 
 a.entry-read-more:hover {
-  color: #51a559;
+  color: $color-primary;
 }
 
 .inner-blog-post {
@@ -468,7 +415,7 @@ a.entry-read-more:hover {
 }
 
 .photo-credit a {
-  color: #35833f;
+  color: $color-highlight;
 }
 
 .portfolio-listing .tab-list {
@@ -502,7 +449,7 @@ a.entry-read-more:hover {
   padding: 20px;
 }
 .inner-blog-post h2.section-headline {
-  color: #35833f;
+  color: $color-highlight;
   font-size: 30px;
   margin: 20px 0px;
 }
@@ -512,7 +459,7 @@ a.entry-read-more:hover {
 }
 
 .inner-blog-post .business-content a {
-  color: #35833f;
+  color: $color-highlight;
 }
 
 .inner-blog-post .business-content h3 {
@@ -544,11 +491,6 @@ h4.success-msg {
   font-weight: 700;
   font-size: 36px;
 }
-.article-list {
-  margin-bottom: 0;
-  margin-top: $spacing-standard;
-  padding: 0;
-}
 
 .backtohome.contact100-form-btn {
   width: auto;
@@ -561,7 +503,7 @@ h4.success-msg {
 .entry-content-bottom {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .entry-content-bottom a.entry-read-more {
@@ -663,11 +605,11 @@ h4.success-msg {
 /*/ Social Media Sharing Buttons /*/
 
 .business-website {
-  color: #35833f;
+  color: $color-highlight;
 }
 
 .business-website:hover {
-  color: #35833f;
+  color: $color-highlight;
 }
 
 .social-share-row {

@@ -1,7 +1,11 @@
 .and-owns-a-suit-page {
+  & .hero {
+    height: 300px;
+  }
+
   & > section {
-    margin: $spacing-standard 0;
-    padding: 0 $spacing-standard;
+    margin: $spacing-medium 0;
+    padding: 0 $spacing-medium;
 
     &.professional-writing {
       background-color: $color-dark;

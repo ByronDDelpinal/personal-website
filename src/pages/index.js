@@ -4,7 +4,8 @@ import Img from 'gatsby-image';
 import React from 'react';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-import BlogPreview from '../components/blog-preview';
+import BlogPreviewList from '../components/blog-preview-list';
+import Header from '../components/header';
 import Layout from '../components/layout';
 
 const IndexPage = props => {
@@ -12,11 +13,12 @@ const IndexPage = props => {
   const siteTitle = props.data.site.siteMetadata.title;
 
   return (
-    <Layout>
+    <Layout hideHeader={true}>
       <Helmet title={siteTitle} />
         <div className="indexpage">
           <div className="hero">
-            <h2 className="hero--header">Hey, I'm Byron 👋🏼</h2>
+            <Header />
+            <h2 className="hero--header">👋🏼 Hey, I'm Byron</h2>
             <h3 className="hero--sub-header">I write software and do cool stuff. <br />Pull up a chair and stay a while.</h3>
           </div>
           <section className="title-with-selections">
@@ -35,19 +37,13 @@ const IndexPage = props => {
             <h2 className="blog-four-up--header">
               #OldManRants
             </h2>
-            <div className="blog-four-up--blog-list">
-              {blogPosts.map(blogPost => {
-                return (
-                  <BlogPreview blogPost={blogPost} />
-                );
-              })}
-              <Link
-                to="/and-writes"
-                className="button highlighted">
-                <span />
-                See All
-              </Link>
-            </div>
+            <BlogPreviewList condensed={true} blogPosts={blogPosts} />
+            <Link
+              to="/and-writes-about"
+              className="button highlighted">
+              <span />
+              See All
+            </Link>
           </div>
         </div>
     </Layout>
@@ -64,7 +60,7 @@ export const query = graphql`
         description
       }
     }
-    allContentfulBlogPost(limit: 4) {
+    allContentfulBlogPost(limit: 3) {
       nodes {
         id
         category

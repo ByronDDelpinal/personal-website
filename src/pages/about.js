@@ -12,7 +12,7 @@ export class About extends Component {
     return (
       <div>
         <Helmet title={siteTitle} />
-        <Layout>
+        <Layout selectedPage='about'>
           <section className="about-us pad-70">
             <div className="container">
               <div className="row">

@@ -1,21 +1,30 @@
 .hero {
   align-content: center;
-  background-color: $color-dark;
+  background-image: $gradient-hero;
   color: $color-light;
   display: flex;
-  min-height: 40vh;
+  height: 100vh;
   flex-wrap: wrap;
 
   &--header {
     flex-basis: 100%;
     font-size: $fontsize-xlarge;
-    margin-bottom: $spacing-standard;
+    margin-bottom: $spacing-medium;
     text-align: center;
+    text-shadow: 3px 4px 0px $color-dark;
   }
 
   &--sub-header {
     flex-basis: 100%;
     font-size: $fontsize-medium;
     text-align: center;
+    text-shadow: 3px 4px 0px $color-dark;
+  }
+
+  & .site-header {
+    background-color: transparent;
+    border-width: 0;
+    position: absolute;
+    top: 0;
   }
 }

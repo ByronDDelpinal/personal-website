@@ -55,7 +55,7 @@ class BlogPostTemplate extends Component {
     if (blogPost.isExternal) { return null; }
 
     return (
-      <Layout>
+      <Layout selectedPage='writes'>
         <Helmet
           title={`${blogPost.name} | Byron Delpinal`}
           meta={[
@@ -77,7 +77,7 @@ class BlogPostTemplate extends Component {
             },
             {
               property: 'og:url',
-              content: `https://byron.codes/and-writes/${blogPost.urlName}`,
+              content: `https://byron.codes/and-writes-about/${blogPost.urlName}`,
             },
             {
               property: 'og:type',

@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.allContentfulBlogPost.nodes.forEach(blogPost => {
       if (!blogPost.isExternal) {
         createPage({
-          path: `/and-writes/${blogPost.urlName}`,
+          path: `/and-writes-about/${blogPost.urlName}`,
           component: path.resolve(`./src/template/blog-post-single.js`),
           context: {
             category: blogPost.category,

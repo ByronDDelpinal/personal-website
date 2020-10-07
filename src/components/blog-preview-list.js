@@ -1,19 +1,16 @@
 import React from 'react';
 
 import BlogPreview from './blog-preview';
+import BlogPreviewCondensed from './blog-preview-condensed';
 
 function BlogPreviewList(props) {
   return (
-    <ul className="article-list row">
+    <ul className="blog-preview-list row">
       {props.blogPosts.map(blogPost => {
         return (
-          <li
-            data-type={blogPost.type}
-            key={blogPost.urlName}
-            className="col-lg-6"
-          >
-            <BlogPreview blogPost={blogPost} />
-          </li>
+          props.condensed
+            ? <BlogPreviewCondensed blogPost={blogPost} />
+            : <BlogPreview blogPost={blogPost} />
         );
       })}
     </ul>

@@ -124,7 +124,7 @@ function BlogPostIndex(props) {
   return (
     <div class="and-writes-page">
       <Helmet title={siteTitle} />
-      <Layout>
+      <Layout selectedPage='writes'>
         <div className="container">
           <div className="text-center pad-20">
   <h2 className="section-title">{blogPosts.length} Uninteresting Conjectures</h2>

@@ -14,7 +14,7 @@ const Contact = props => {
   return (
     <div className="container-contact100">
       <Helmet title={siteTitle} />
-      <Layout>
+      <Layout selectedPage='contact'>
         <section className="contact-us pad-70">
           <div className="container">
             <div className="col-lg-12">

@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import React from 'react';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-import BlogPreview from '../components/blog-preview';
+import BlogPreviewList from '../components/blog-preview-list';
 import Layout from '../components/layout';
 
 const AndOwnsASuitPage = props => {
@@ -65,23 +65,16 @@ const AndOwnsASuitPage = props => {
           </section>
           <section className="professional-writing">
             <div className="blog-four-up">
-              <h2 className="blog-four-up--header">
+              <h2 className="blog-four-up--header light">
                 Technical Writing
               </h2>
-              <p className="blog-four-up--description">Below you'll find articles I've written ranging from in-depth technical explanations to conjectures on managing people.</p>
-              <div className="blog-four-up--blog-list">
-                {blogPosts.map(blogPost => {
-                  return (
-                    <BlogPreview blogPost={blogPost} />
-                  );
-                })}
-                <Link
-                  to="/and-writes"
-                  className="button highlighted">
-                  <span />
-                  See All
-                </Link>
-              </div>
+              <BlogPreviewList condensed={true} blogPosts={blogPosts} />
+              <Link
+                to="/and-writes-about"
+                className="button highlighted">
+                <span />
+                See All
+              </Link>
             </div>
           </section>
           <section className="professional-speaking">

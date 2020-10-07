@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&display=swap)
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url(https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap)
+}
+
+body {
+  font-family: 'Josefin Sans';
+  font-weight: 300;
+  color: $color-dark; //color variable set elsewhere
+  -webkit-text-size-adjust: 100%; //fix for iOS
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'PT Sans Narrow';
+  font-weight: 700 !important;
+}

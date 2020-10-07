@@ -46,6 +46,7 @@ const BlogContentBlock = props => {
         fluid={content.image.fluid}
         objectFit="none"
       />
+      <h4>{content.title}</h4>
       <p>{getRichTextContent(content.content.json.content)}</p>
     </section>
   );

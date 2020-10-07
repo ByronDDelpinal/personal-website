@@ -15,7 +15,7 @@ import '../styles/index.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import shareImg from '../images/support-social-card.png';
 
-const Template = ({ children }) => (
+const Template = ({ children, hideHeader, selectedPage }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -77,8 +77,11 @@ const Template = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header />
-        <div className="main-content">{children}</div>
+        {hideHeader
+          ? null
+          : <Header selectedPage={selectedPage}/>
+        }
+        <div className={`main-content${hideHeader ? ' no-header' : ''}`}>{children}</div>
 
         <Footer />
       </>

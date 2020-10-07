@@ -1,6 +1,6 @@
 .title-with-selections {
   display: block;
-  margin: 50px auto;
+  margin: $spacing-xlarge auto;
 
   &--header {
     font-size: $fontsize-large;
@@ -12,7 +12,7 @@
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
-    max-width: 70vw;
+    max-width: 80vw;
     width: 100%;
   }
 }
