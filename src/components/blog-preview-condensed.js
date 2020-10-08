@@ -10,6 +10,7 @@ import Share from './share';
 const BlogPreview = props => {
   const MAX_LENGTH_TITLE = 80;
   const { blogPost } = props;
+  const blogPostName = blogPost.name > MAX_LENGTH_TITLE ? blogPost.name : blogPost.name.substring(0, MAX_LENGTH_TITLE);
 
   return (
     <li className="blog-preview condensed" key={blogPost.urlName}>
@@ -47,20 +48,14 @@ const BlogPreview = props => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              {blogPost.name > MAX_LENGTH_TITLE
-                ? blogPost.name
-                : blogPost.name.substring(0, MAX_LENGTH_TITLE)
-              }
+              {blogPostName}
             </OutboundLink>
           :
             <Link
               className="blog-preview--image-link"
               to={`/and-writes-about/${blogPost.urlName}`}
             >
-              {blogPost.name > MAX_LENGTH_TITLE
-                ? blogPost.name
-                : blogPost.name.substring(0, MAX_LENGTH_TITLE)
-              }
+              {blogPostName}
             </Link>
         }
       </h2>

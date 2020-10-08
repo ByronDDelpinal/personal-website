@@ -4,13 +4,12 @@
   background-color: #fdfdfd;
   box-shadow: 0.3rem 0.4rem 2.4rem rgba(0, 0, 0, 0.2);
   display: flex;
-  flex-basis: 48%;
+  flex-basis: 31%;
   flex-direction: column;
   flex-wrap: wrap;
   font-weight: bold;
   margin: 1%;
-  min-height: 28rem;
-  padding: $spacing-medium;
+  min-height: 21rem;
 
   &.condensed {
     flex-basis: 31%;
@@ -50,7 +49,7 @@
   }
 
   &--image {
-    height: 20rem;
+    height: 15rem;
   }
 
   &--image-link {
@@ -60,8 +59,12 @@
   &--read-more {
     align-self: flex-end;
     color: $color-primary;
+    display: block;
     margin: auto 0 0 0;
+    padding-bottom: $spacing-small;
+    padding-right: $spacing-small;
     text-align: right;
+    width: 100%;
 
     &:hover {
       color: $color-primary;
@@ -70,16 +73,20 @@
   }
 
   &--summary {
-    margin: $spacing-small 0;
+    margin: $spacing-small;
   }
 
   &--title {
     line-height: 1;
-    margin-bottom: 0px;
+    margin: 0;
+    padding: $spacing-small $spacing-small 0 $spacing-small;
 
     & a {
+      align-items: center;
       font-size: 20px;
       color: $color-primary;
+      display: flex;
+      height: 100%;
       font-family: 'PT Sans Narrow';
       font-size: $fontsize-medium;
       text-decoration: none;

@@ -9,6 +9,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "bootstrap": "^4.4.1",
+    "disqus-react": "^1.0.10",
     "fuse.js": "^5.1.0",
     "gatsby": "^2.19.48",
     "gatsby-cli": "^2.10.13",

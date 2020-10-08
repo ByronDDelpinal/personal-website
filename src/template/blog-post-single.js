@@ -1,5 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { graphql } from 'gatsby';
+import { DiscussionEmbed } from "disqus-react"
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 import Link from 'gatsby-link';
@@ -48,6 +49,11 @@ class BlogPostTemplate extends Component {
     const hasContentBlocks = blogPost.contentBlocks && blogPost.contentBlocks.length > 0;
     const relatedBlogPosts = this.props.data.allContentfulBlogPost.nodes;
     const anyRelatedBlogPosts = relatedBlogPosts.length > 0;
+
+    const disqusConfig = {
+      shortname: process.env.GATSBY_DISQUS_NAME,
+      config: { identifier: blogPost.urlName, title: blogPost.name },
+    }
 
     console.log(hasContentBlocks);
 
@@ -101,16 +107,8 @@ class BlogPostTemplate extends Component {
         <div className="inner-blog-post pad-40">
           <div className="container">
             <div className="row">
-              <div className="post-content top-content">
-                <div class="post-left-content">
-                  <h2 className="section-headline"> {blogPost.name} </h2>
-                  <p className="business-type">{blogPost.type}</p>
-                </div>
-              </div>
               {/* if we have related blog posts, make room for the sidebar */}
-              <div
-                className={`${anyRelatedBlogPosts ? 'col-md-8' : 'col-md-12'}`}
-              >
+              <div className='col-md-8'>
                 <div className="entry-media">
                   <Img
                     backgroundColor={'#f4f8fb'}
@@ -124,7 +122,7 @@ class BlogPostTemplate extends Component {
                     <p>{blogPost.contentSummary}</p>
                   </div>
                   <div className="business-content">
-                    <h3>The Content</h3>
+                    <h3>{blogPost.name}</h3>
                     {getRichTextContent(blogPost.content.json.content || [])}
                     {hasContentBlocks &&
                       blogPost.contentBlocks.map(contentBlock => (
@@ -166,6 +164,7 @@ class BlogPostTemplate extends Component {
                 </div>
               ) : null}
             </div>
+            <DiscussionEmbed {...disqusConfig} />
           </div>
         </div>
       </Layout>
