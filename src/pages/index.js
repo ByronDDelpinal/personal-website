@@ -39,7 +39,7 @@ const IndexPage = props => {
             </h2>
             <BlogPreviewList condensed={true} blogPosts={blogPosts} />
             <Link
-              to="/and-writes-about"
+              to="/and-writes"
               className="button highlighted">
               <span />
               See All

@@ -22,7 +22,7 @@ const Header = props => {
           <li>
             <Link
               className={`${props.selectedPage === 'writes' ? 'selected' : ''}`}
-              to="/and-writes-about/"
+              to="/and-writes/"
             >
               Writing
             </Link>

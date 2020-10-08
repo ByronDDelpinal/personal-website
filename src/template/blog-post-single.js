@@ -184,6 +184,9 @@ export const pageQuery = graphql`
       }
       contentSummary
       contentBlocks {
+        content {
+          json
+        }
         id
         image {
           fluid {
@@ -198,9 +201,7 @@ export const pageQuery = graphql`
           title
           description
         }
-        content {
-          json
-        }
+        title
       }
       id
       image {
