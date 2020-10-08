@@ -40,7 +40,7 @@ const BlogPreview = props => {
           </Link>
       }
       <h2 className="blog-preview--title">
-        <Link to={blogPost.urlName}>
+        <Link to={`/and-writes-about/${blogPost.urlName}`}>
           {' '}
           {blogPost.name > MAX_LENGTH_TITLE
             ? blogPost.name
