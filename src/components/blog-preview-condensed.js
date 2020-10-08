@@ -40,12 +40,29 @@ const BlogPreview = props => {
           </Link>
       }
       <h2 className="blog-preview--title">
-        <Link to={`/and-writes-about/${blogPost.urlName}`}>
-          {' '}
-          {blogPost.name > MAX_LENGTH_TITLE
-            ? blogPost.name
-            : blogPost.name.substring(0, MAX_LENGTH_TITLE)}{' '}
-        </Link>
+        {blogPost.isExternal
+          ?
+            <OutboundLink
+              href={blogPost.externalUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {blogPost.name > MAX_LENGTH_TITLE
+                ? blogPost.name
+                : blogPost.name.substring(0, MAX_LENGTH_TITLE)
+              }
+            </OutboundLink>
+          :
+            <Link
+              className="blog-preview--image-link"
+              to={`/and-writes-about/${blogPost.urlName}`}
+            >
+              {blogPost.name > MAX_LENGTH_TITLE
+                ? blogPost.name
+                : blogPost.name.substring(0, MAX_LENGTH_TITLE)
+              }
+            </Link>
+        }
       </h2>
     </li>
   );
