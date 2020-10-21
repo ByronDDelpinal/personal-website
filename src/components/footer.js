@@ -1,8 +1,6 @@
 import { Link } from 'gatsby';
 import React, { Component } from 'react';
 
-import logoImg from '../images/support-akron-logo.png';
-
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);

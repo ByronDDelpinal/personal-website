@@ -80,8 +80,8 @@
     width: 100px;
 
     &:hover {
-      transform: rotate(90deg);
-      transition: .5s;
+      transform: scaleX(-1);
+      transition: .2s;
     }
   }
 }

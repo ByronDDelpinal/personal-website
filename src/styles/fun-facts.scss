@@ -1,0 +1,11 @@
+.fun-facts {
+  margin: $spacing-large 0;
+
+  &--header {
+    border-bottom: 3px dashed $color-secondary;
+    color: $color-dark;
+    flex-basis: 100%;
+    font-size: $fontsize-large;
+    margin: $spacing-large 0;
+  }
+}

@@ -3,15 +3,19 @@
 @import './_typography.scss';
 
 /******** PAGES ********/
+@import './pages/about.scss';
+@import './pages/and-writes.scss';
 @import './pages/and-owns-a-suit.scss';
 
 /******** COMPONENTS ********/
+@import './backstory.scss';
 @import './blog-content-blocks';
 @import './blog-four-up.scss';
 @import './blog-preview';
 @import './blog-preview-list';
 @import './button.scss';
 @import './footer.scss';
+@import './fun-facts.scss';
 @import './header.scss';
 @import './hero.scss';
 @import './contact';
@@ -637,7 +641,7 @@ h4.success-msg {
   padding: 10px 0;
 }
 
-.facets .facet {
+.facet {
   background: none;
   border: 10px solid;
   border-image-slice: 1;
@@ -651,21 +655,17 @@ h4.success-msg {
   margin: 10px 5px;
   outline: none !important;
   padding: 8px 25px 4px 25px;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
   text-transform: uppercase;
-  transition: all 0.4s;
 }
 
-.facets .facet:hover {
+.facet:hover {
   background-image: $gradient-button;
   color: $color-light;
   cursor: pointer;
 }
 
-.facets .facet.selected,
-.facets .facet.selected:hover {
+.facet.selected,
+.facet.selected:hover {
   background-image: $gradient-button;
   border: 10px solid;
   border-image-slice: 1;
@@ -674,7 +674,7 @@ h4.success-msg {
   color: $color-light;
 }
 
-.facets .facet:last-child {
+.facet:last-child {
   appearance: none;
   border-radius: 0;
   padding: 8px 15px 4px 15px;
@@ -774,6 +774,10 @@ h4.success-msg {
   margin-top: 20px;
 }
 /*/ Page Contents /*/
+
+.contact-page .main-content {
+  background-color: $color-dark;
+}
 
 
 /* TODO - The way the handle button CSS is duplicated a lot */

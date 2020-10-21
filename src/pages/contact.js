@@ -12,7 +12,7 @@ const Contact = props => {
   const siteTitle = props.data.site.siteMetadata.title;
 
   return (
-    <div className="container-contact100">
+    <div className="contact-page container-contact100">
       <Helmet title={siteTitle} />
       <Layout selectedPage='contact'>
         <section className="contact-us pad-70">

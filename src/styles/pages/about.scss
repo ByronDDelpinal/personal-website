@@ -1,0 +1,22 @@
+.aboutpage {
+  padding: $spacing-large;
+  margin: 0 auto;
+  max-width: $max-page-width;
+
+  &--header {
+    border-bottom: 3px dashed $color-secondary;
+    color: $color-dark;
+    flex-basis: 100%;
+    font-size: $fontsize-large;
+    margin-bottom: $spacing-medium;
+  }
+
+  &--top-info {
+    margin: 0 $spacing-large;
+  }
+
+  &--top-section {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}

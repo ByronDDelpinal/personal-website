@@ -18,7 +18,7 @@ const IndexPage = props => {
         <div className="indexpage">
           <div className="hero">
             <Header />
-            <h2 className="hero--header">👋🏼 Hey, I'm Byron</h2>
+            <h1 className="hero--header">👋🏼 Hey, I'm Byron</h1>
             <h3 className="hero--sub-header">I write software and do cool stuff. <br />Pull up a chair and stay a while.</h3>
           </div>
           <section className="title-with-selections">

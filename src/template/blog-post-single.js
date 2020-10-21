@@ -10,7 +10,6 @@ import React, { Component } from 'react';
 import { INLINES } from '@contentful/rich-text-types';
 import Layout from '../components/layout';
 import BlogContentBlock from '../components/blog-content-block';
-import websiteLogo from '../images/website-logo.png';
 
 // Overrides the way we handle the inline hypertext item in a document. This
 // adds outbound linking so we can track if traffic is actually going to

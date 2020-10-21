@@ -13,7 +13,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import '../styles/index.scss';
 import 'bootstrap/dist/css/bootstrap.css';
-import shareImg from '../images/support-social-card.png';
+import shareImg from '../images/portrait-outdoors.jpg';
 
 const Template = ({ children, hideHeader, selectedPage }) => (
   <StaticQuery
