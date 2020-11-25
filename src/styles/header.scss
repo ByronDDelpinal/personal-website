@@ -11,20 +11,19 @@
 }
 
 .site-header {
-  @include header-height;
-
   align-items: center;
   background: $color-dark;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  padding: 0 calc((100vw - 1300px) / 2);
+  padding: $spacing-small calc((100vw - 1300px) / 2);
   position: relative;
   width: 100%;
 
   @media (min-width: 700px) {
     flex-wrap: nowrap;
+    padding: $spacing-medium calc((100vw - 1300px) / 2);
     justify-content: space-between;
   }
 

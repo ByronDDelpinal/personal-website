@@ -9,7 +9,9 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 
 const IndexPage = props => {
-  const blogPosts = props.data.allContentfulBlogPost.nodes;
+  const diyPost = props.data.diyPost.nodes;
+  const personalPost = props.data.personalPost.nodes;
+  const techPost = props.data.techPost.nodes;
   const siteTitle = props.data.site.siteMetadata.title;
 
   return (
@@ -35,9 +37,9 @@ const IndexPage = props => {
           </section>
           <div className="blog-four-up">
             <h2 className="blog-four-up--header">
-              #OldManRants
+              Latest Rants 📣
             </h2>
-            <BlogPreviewList condensed={true} blogPosts={blogPosts} />
+            <BlogPreviewList condensed={true} blogPosts={[techPost[0], personalPost[0], diyPost[0]]} />
             <Link
               to="/and-writes"
               className="button highlighted">
@@ -60,7 +62,61 @@ export const query = graphql`
         description
       }
     }
-    allContentfulBlogPost(limit: 3) {
+    diyPost: allContentfulBlogPost(filter: {category: {eq: "DIY"}}, limit: 1) {
+      nodes {
+        id
+        category
+        name
+        urlName
+        isExternal
+        publishedDate
+        externalUrl
+        externalSourceName
+        image {
+          fluid {
+            aspectRatio
+            sizes
+            src
+            srcSet
+            srcSetWebp
+            srcWebp
+          }
+          description
+        }
+        contentSummary
+        content {
+          content
+        }
+      }
+    }
+    techPost: allContentfulBlogPost(filter: {category: {eq: "Technical"}}, limit: 1) {
+      nodes {
+        id
+        category
+        name
+        urlName
+        isExternal
+        publishedDate
+        externalUrl
+        externalSourceName
+        image {
+          fluid {
+            aspectRatio
+            sizes
+            src
+            srcSet
+            srcSetWebp
+            srcWebp
+          }
+          description
+        }
+        contentSummary
+        content {
+          content
+        }
+      }
+    }
+    personalPost: allContentfulBlogPost(filter: {category: {eq: "Personal"}}, limit: 1) {
       nodes {
         id
         category

@@ -1,6 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { graphql } from 'gatsby';
-import { DiscussionEmbed } from "disqus-react"
+import { DiscussionEmbed } from 'disqus-react';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 import Link from 'gatsby-link';
@@ -36,31 +36,29 @@ const getRichTextContent = jsonContent => {
     content: jsonContent || [],
   };
 
-  return documentToReactComponents(
-    blogPostContent,
-    blogPostOptions
-  )
-}
+  return documentToReactComponents(blogPostContent, blogPostOptions);
+};
 
 class BlogPostTemplate extends Component {
   render() {
     const blogPost = this.props.data.contentfulBlogPost;
-    const hasContentBlocks = blogPost.contentBlocks && blogPost.contentBlocks.length > 0;
+    const hasContentBlocks =
+      blogPost.contentBlocks && blogPost.contentBlocks.length > 0;
     const relatedBlogPosts = this.props.data.allContentfulBlogPost.nodes;
     const anyRelatedBlogPosts = relatedBlogPosts.length > 0;
 
     const disqusConfig = {
       shortname: process.env.GATSBY_DISQUS_NAME,
       config: { identifier: blogPost.urlName, title: blogPost.name },
-    }
-
-    console.log(hasContentBlocks);
+    };
 
     // Stops this process if it's external, since we won't have most of what we need.
-    if (blogPost.isExternal) { return null; }
+    if (blogPost.isExternal) {
+      return null;
+    }
 
     return (
-      <Layout selectedPage='writes'>
+      <Layout selectedPage="writes">
         <Helmet
           title={`${blogPost.name} | Byron Delpinal`}
           meta={[
@@ -103,36 +101,30 @@ class BlogPostTemplate extends Component {
           ]}
         />
 
-        <div className="inner-blog-post pad-40">
-          <div className="container">
-            <div className="row">
-              {/* if we have related blog posts, make room for the sidebar */}
-              <div className='col-md-8'>
-                <div className="entry-media">
-                  <Img
-                    backgroundColor={'#f4f8fb'}
-                    fluid={blogPost.image.fluid}
-                    objectFit="none"
-                  />
-                </div>
-                <div className="post-content">
-                  <div className="business-content">
-                    <h3>TL;DR</h3>
-                    <p>{blogPost.contentSummary}</p>
-                  </div>
-                  <div className="business-content">
-                    <h3>{blogPost.name}</h3>
-                    {getRichTextContent(blogPost.content.json.content || [])}
-                    {hasContentBlocks &&
-                      blogPost.contentBlocks.map(contentBlock => (
-                        <BlogContentBlock content={contentBlock}/>
-                      ))
-                    }
-                  </div>
-                </div>
-              </div>
-              {/* Sidebar Stuff Goes Here, need to change back to col-lg-7 col-md-7 */}
-              {anyRelatedBlogPosts ? (
+        <div className="blog-post">
+          <div className="entry-media">
+            <Img
+              backgroundColor={'#f4f8fb'}
+              fluid={blogPost.image.fluid}
+              objectFit="none"
+            />
+          </div>
+          <div className="post-content">
+            <div className="business-content">
+              <h3>TL;DR</h3>
+              <p>{blogPost.contentSummary}</p>
+            </div>
+            <div className="business-content">
+              <h3>{blogPost.name}</h3>
+              {getRichTextContent(blogPost.content.json.content || [])}
+              {hasContentBlocks &&
+                blogPost.contentBlocks.map(contentBlock => (
+                  <BlogContentBlock content={contentBlock} />
+                ))}
+            </div>
+          </div>
+          {/* Sidebar Stuff Goes Here, need to change back to col-lg-7 col-md-7 */}
+          {/* {anyRelatedBlogPosts ? (
                 <div className="col-md-4">
                   <div className="sidebar-blk">
                     <h4>Related Posts</h4>
@@ -161,10 +153,8 @@ class BlogPostTemplate extends Component {
                     </ul>
                   </div>
                 </div>
-              ) : null}
-            </div>
-            <DiscussionEmbed {...disqusConfig} />
-          </div>
+              ) : null} */}
+          <DiscussionEmbed {...disqusConfig} />
         </div>
       </Layout>
     );

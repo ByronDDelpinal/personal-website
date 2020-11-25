@@ -124,32 +124,30 @@ function BlogPostIndex(props) {
   return (
     <div class="and-writes-page">
       <Helmet title={siteTitle} />
-      <Layout selectedPage='writes'>
-        <div className="container">
-          <div className="text-center pad-20">
-  <h2 className="section-title">{blogPosts.length} Uninteresting Conjectures</h2>
-          </div>
-          <div className="facets">
-            {categories.map(category => (
-              <button
-                className={`facet${category.selected ? ' selected' : ''}`}
-                onClick={() => filterBlogPosts(category.name)}
-              >
-                {category.name}
-              </button>
-            ))}
-            <select
-              className="facet"
-              id="sort-by"
-              onChange={event => sortBlogPosts(event.target.value)}
+      <Layout selectedPage="writes">
+        <h2 className="section-title">
+          {blogPosts.length} Uninteresting Conjectures
+        </h2>
+        <div className="facets">
+          {categories.map(category => (
+            <button
+              className={`facet${category.selected ? ' selected' : ''}`}
+              onClick={() => filterBlogPosts(category.name)}
             >
-              <option value="">Sort By ▼</option>
-              <option value="asc">Sort: A-Z</option>
-              <option value="desc">Sort: Z-A</option>
-            </select>
-          </div>
-          <BlogPreviewList blogPosts={blogPosts} />
+              {category.name}
+            </button>
+          ))}
+          <select
+            className="facet"
+            id="sort-by"
+            onChange={event => sortBlogPosts(event.target.value)}
+          >
+            <option value="">Sort By ▼</option>
+            <option value="asc">Sort: A-Z</option>
+            <option value="desc">Sort: Z-A</option>
+          </select>
         </div>
+        <BlogPreviewList blogPosts={blogPosts} />
       </Layout>
     </div>
   );

@@ -77,9 +77,9 @@ const AndOwnsASuitPage = props => {
               </Link>
             </div>
           </section>
-          <section className="professional-speaking">
+          {/* <section className="professional-speaking">
             <h2>Speaking Engagements & Presentations</h2>
-          </section>
+          </section> */}
         </div>
     </Layout>
   );

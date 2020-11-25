@@ -14,70 +14,68 @@ const Contact = props => {
   return (
     <div className="contact-page container-contact100">
       <Helmet title={siteTitle} />
-      <Layout selectedPage='contact'>
-        <section className="contact-us pad-70">
-          <div className="container">
-            <div className="col-lg-12">
-              <div className="wrap-contact100">
-                <form
-                  name="contact"
-                  method="post"
-                  content-type="multipart/form-data"
-                  data-netlify="true"
-                  className="contact-form"
-                  data-netlify-honeypot="bot-field"
-                  action="/success"
-                >
-                  <input type="hidden" name="form-name" value="contact" />
-                  <input type="hidden" name="bot-field" />
-                  <div>
-                    <h5>Say Hey 📬</h5>
-                    <p>
-                      Whether you're looking to catch up over coffee, talk about tech, have a jam session, or book me for a software contract, I'd love to chat!
-                    </p>
-                  </div>
-                  <div className="field half">
-                    <label htmlFor="name">Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      className="input100"
-                      required
-                    />
-                    <span class="focus-input100"></span>
-                  </div>
-                  <div className="field half">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      type="text"
-                      name="email"
-                      id="email"
-                      className="input100"
-                      required
-                    />
-                    <span class="focus-input100"></span>
-                  </div>
-                  <div className="field">
-                    <label htmlFor="story">What's up?</label>
-                    <textarea name="story" id="story" required></textarea>
-                  </div>
-                  <div className="actions">
-                      <input
-                        type="submit"
-                        value="Send"
-                        className="button highlighted"
-                      />
-                  </div>
-                </form>
+      <Layout selectedPage="contact">
+        <section className="contact-us">
+          <div className="wrap-contact">
+            <form
+              name="contact"
+              method="post"
+              content-type="multipart/form-data"
+              data-netlify="true"
+              className="contact-form"
+              data-netlify-honeypot="bot-field"
+              action="/success"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
+              <div>
+                <h5>Say Hey 📬</h5>
+                <p>
+                  Whether you're looking to catch up over coffee, talk about
+                  tech, have a jam session, or book me for a software contract,
+                  I'd love to chat!
+                </p>
               </div>
-            </div>
+              <div className="field half">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  className="input100"
+                  required
+                />
+                <span class="focus-input100"></span>
+              </div>
+              <div className="field half">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  className="input100"
+                  required
+                />
+                <span class="focus-input100"></span>
+              </div>
+              <div className="field">
+                <label htmlFor="story">What's up?</label>
+                <textarea name="story" id="story" required></textarea>
+              </div>
+              <div className="actions">
+                <input
+                  type="submit"
+                  value="Send"
+                  className="button highlighted"
+                />
+              </div>
+            </form>
           </div>
         </section>
       </Layout>
     </div>
   );
-}
+};
 
 export default Contact;
 

@@ -6,6 +6,7 @@
   display: flex;
   height: $footer-height;
   justify-content: center;
+  padding: $spacing-small;
 
   & p {
     color: $color-light;

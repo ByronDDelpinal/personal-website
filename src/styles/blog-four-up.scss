@@ -14,10 +14,14 @@
     border-bottom: 3px dashed $color-secondary;
     color: $color-dark;
     flex-basis: 100%;
-    margin-bottom: $spacing-large;
+    margin-bottom: $spacing-small;
 
     &.light {
       color: $color-light;
+    }
+
+    @media (min-width: 700px) {
+      margin-bottom: $spacing-medium;
     }
   }
 

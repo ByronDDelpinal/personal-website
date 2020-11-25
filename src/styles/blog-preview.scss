@@ -17,6 +17,7 @@
   }
 
   &.condensed {
+    flex-basis: 99%;
     height: 20rem;
     min-height: 20rem;
     padding: 0;
@@ -50,6 +51,24 @@
         color: $color-light;
       }
     }
+
+    @media (min-width: 700px) {
+      flex-basis: 31%;
+      margin: 1%;
+    }
+  }
+
+  &--category {
+    background-color: $color-primary;
+    color: $color-light;
+    font-weight: 300;
+    margin: 0;
+    padding: 0.1rem 0.5rem;
+    position: absolute;
+    right: 0;
+    text-transform: lowercase;
+    top: 0;
+    z-index: 100;
   }
 
   &--image {

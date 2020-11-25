@@ -1,0 +1,17 @@
+.blog-post {
+  background-color: $color-dark;
+  color: $color-light;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: $spacing-medium calc((100vw - 1300px) / 2);
+
+  & .entry-media {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  & #disqus_thread {
+    width: 100%;
+  }
+}

@@ -14,6 +14,7 @@ const BlogPreview = props => {
 
   return (
     <li className="blog-preview condensed" key={blogPost.urlName}>
+      <p className="blog-preview--category">Latest in #{blogPost.category}</p>
       {blogPost.isExternal
         ?
           <OutboundLink
