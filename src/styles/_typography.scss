@@ -23,3 +23,39 @@ h5 {
   font-family: 'PT Sans Narrow';
   font-weight: 700 !important;
 }
+
+h1 {
+  font-size: $fontsize-medium;
+
+  @media (min-width: 600px) {
+    font-size: $fontsize-large;
+  }
+
+  @media (min-width: 1000px) {
+    font-size: $fontsize-xlarge;
+  }
+}
+
+h2 {
+  font-size: $fontsize-small;
+
+  @media (min-width: 600px) {
+    font-size: $fontsize-medium;
+  }
+
+  @media (min-width: 1000px) {
+    font-size: $fontsize-large;
+  }
+}
+
+h3 {
+  font-size: $fontsize-small;
+
+  @media (min-width: 600px) {
+    font-size: $fontsize-medium;
+  }
+
+  @media (min-width: 1000px) {
+    font-size: $fontsize-large;
+  }
+}

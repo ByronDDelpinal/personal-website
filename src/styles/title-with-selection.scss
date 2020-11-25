@@ -1,18 +1,40 @@
 .title-with-selections {
   display: block;
-  margin: $spacing-xlarge auto;
+  margin: $spacing-xlarge $spacing-medium;
 
   &--header {
-    font-size: $fontsize-large;
     margin-bottom: 25px;
     text-align: center;
   }
 
   & .selections-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    margin: 0 auto;
-    max-width: 80vw;
+    margin: 0;
     width: 100%;
+
+    & .button {
+      flex-basis: 100%;
+
+      &:first-child {
+        margin-bottom: $spacing-medium;
+      }
+
+      @media (min-width: 800px) {
+        flex-basis: 40%;
+        min-width: 18rem;
+
+        &:first-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    @media (min-width: 800px) {
+      flex-wrap: nowrap;
+      margin: 0 auto;
+      max-width: 80vw;
+    }
   }
 }

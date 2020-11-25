@@ -58,7 +58,7 @@ img {
 
 .main-content {
   margin-top: $header-border-width;
-  min-height: calc(100vh - #{$footer-height} - #{$header-height} - #{$header-border-width});
+  min-height: calc(100vh - #{$footer-height} - #{header-height()} - #{$header-border-width});
 
   &.no-header {
     margin-top: 0;

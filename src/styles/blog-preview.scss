@@ -4,15 +4,19 @@
   background-color: #fdfdfd;
   box-shadow: 0.3rem 0.4rem 2.4rem rgba(0, 0, 0, 0.2);
   display: flex;
-  flex-basis: 31%;
+  flex-basis: 100%;
   flex-direction: column;
   flex-wrap: wrap;
   font-weight: bold;
-  margin: 1%;
+  margin: 0 0 $spacing-medium 0;
   min-height: 21rem;
 
+  @media (min-width: 700px) {
+    flex-basis: 48%;
+    margin: 1%;
+  }
+
   &.condensed {
-    flex-basis: 31%;
     height: 20rem;
     min-height: 20rem;
     padding: 0;

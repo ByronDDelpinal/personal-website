@@ -6,10 +6,18 @@
   border-width: 5px;
   color: $color-primary;
   font-family: 'PT Sans Narrow';
-  font-size: $fontsize-medium;
+  font-size: $fontsize-small;
   padding: 1rem 2rem;
   text-align: center;
-  width: 500px;
+  width: 100%;
+
+  @media (min-width: 700px) {
+    width: 18rem;
+  }
+
+  @media (min-width: 800px) {
+    font-size: $fontsize-medium;
+  }
 
   &:hover {
     background-image: $gradient-button;

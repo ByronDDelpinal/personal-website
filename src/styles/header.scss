@@ -11,15 +11,22 @@
 }
 
 .site-header {
+  @include header-height;
+
   align-items: center;
   background: $color-dark;
   display: flex;
-  height: $header-height;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 auto;
-  padding: $spacing-medium 0;
+  padding: 0 calc((100vw - 1300px) / 2);
   position: relative;
   width: 100%;
+
+  @media (min-width: 700px) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 
   &:after {
     content: '';
@@ -35,12 +42,17 @@
   }
 
   & nav {
+    flex-basis: 100%;
+    margin: 0 $spacing-medium;
+
     & ul {
+      display: flex;
+      justify-content: flex-end;
       margin: 0;
       padding: 0;
 
       & a {
-        font-size: 16px;
+        font-size: 0.6rem;
         font-weight: 600;
         text-transform: uppercase;
         color: $color-light;
@@ -61,6 +73,14 @@
             width: 100%;
           }
         }
+
+        @media (min-width: 450px) {
+          font-size: 0.75rem;
+        }
+
+        @media (min-width: 450px) {
+          font-size: 1rem;
+        }
       }
 
       & li {
@@ -73,15 +93,30 @@
         }
       }
     }
+
+    @media (min-width: 700px) {
+      flex-basis: 100%;
+    }
   }
 
   & .brand-logo {
-    display: inline-block;
+    display: none;
+    margin-left: $spacing-medium;
     width: 100px;
 
     &:hover {
       transform: scaleX(-1);
       transition: .2s;
+    }
+
+    @media (min-width: 700px) {
+      display: block;
+    }
+  }
+
+  & .home {
+    @media (min-width: 700px) {
+      display: none;
     }
   }
 }

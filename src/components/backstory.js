@@ -21,6 +21,7 @@ const Backstory = () => {
 
   return (
     <section className="backstory">
+      { /*
       <div className="backstory--detail-selection">
         <div className="backstory--selection">
           <p>This story only gets longer with time, how much detail do you <em>actually</em> want?</p>
@@ -37,8 +38,8 @@ const Backstory = () => {
 
         <Link to="/and-owns-a-suit" className="work-button button highlighted">If you're looking for "work Byron" you can find him over here.</Link>
       </div>
-
-      <h2 className="backstory--header">{ header() }</h2>
+      */ }
+      <h2 className="backstory--header">Life: { header() }</h2>
       <p>
         I was born and raised on the west side of Cleveland. My dad, Byron, was a carpenter, and my mom, Richelle, worked doing data entry or something.
         I'm not actually sure, her work wasn't actually clear to me as a child. They often worked long hours to make ends meet, which left me at home quite a bit.

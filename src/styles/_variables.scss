@@ -19,7 +19,22 @@ $fontsize-xlarge: 60px;
 
 /******** SITEWIDE HEADER ********/
 $header-border-width: 1rem;
-$header-height: 8rem;
+
+@mixin header-height() {
+  height: 6rem;
+
+  @media (min-width: 500px) {
+    height: 6rem;
+  }
+
+  @media (min-width: 700px) {
+    height: 7rem;
+  }
+
+  @media (min-width: 1000px) {
+    height: 8rem;
+  }
+}
 
 /******** SITEWIDE FOOTER ********/
 $footer-height: 6rem;

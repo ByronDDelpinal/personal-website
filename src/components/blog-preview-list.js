@@ -5,7 +5,7 @@ import BlogPreviewCondensed from './blog-preview-condensed';
 
 function BlogPreviewList(props) {
   return (
-    <ul className="blog-preview-list row">
+    <ul className="blog-preview-list">
       {props.blogPosts.map(blogPost => {
         return (
           props.condensed

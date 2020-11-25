@@ -9,8 +9,16 @@ const Header = props => {
       <Link to="/" className="brand-logo">
         <img src={logoImg} alt="brand logo" />
       </Link>
-      <nav id="main-menu" className="text-right">
+      <nav id="main-menu">
         <ul>
+        <li>
+            <Link
+              className="home"
+              to="/"
+            >
+              Home
+            </Link>
+          </li>
           <li>
             <Link
               className={`${props.selectedPage === 'about' ? 'selected' : ''}`}

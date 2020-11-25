@@ -14,7 +14,6 @@
     border-bottom: 3px dashed $color-secondary;
     color: $color-dark;
     flex-basis: 100%;
-    font-size: $fontsize-large;
     margin-bottom: $spacing-large;
 
     &.light {
@@ -34,8 +33,13 @@
   }
 
   & .button {
-    margin-top: $spacing-large;
-    width: 31%;
+    margin-top: $spacing-medium;
+    width: 100%;
+
+    @media (min-width: 700px) {
+      margin-top: $spacing-large;
+      width: 31%;
+    }
   }
 
   & .blog-listing {

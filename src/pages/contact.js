@@ -62,22 +62,13 @@ const Contact = props => {
                     <label htmlFor="story">What's up?</label>
                     <textarea name="story" id="story" required></textarea>
                   </div>
-                  <ul className="actions">
-                    <li>
+                  <div className="actions">
                       <input
                         type="submit"
                         value="Send"
                         className="button highlighted"
                       />
-                    </li>
-                    <li>
-                      <input
-                        type="reset"
-                        value="Clear"
-                        className="button"
-                      />
-                    </li>
-                  </ul>
+                  </div>
                 </form>
               </div>
             </div>
