@@ -10,7 +10,6 @@
     "@fortawesome/react-fontawesome": "^0.1.9",
     "bootstrap": "^4.4.1",
     "disqus-react": "^1.0.10",
-    "fuse.js": "^5.1.0",
     "gatsby": "^2.19.48",
     "gatsby-cli": "^2.10.13",
     "gatsby-image": "^2.2.45",
@@ -25,28 +24,21 @@
     "gatsby-source-filesystem": "^2.1.57",
     "gatsby-transformer-remark": "^2.6.59",
     "gatsby-transformer-sharp": "^2.3.19",
-    "glamor": "^2.20.40",
-    "glamorous": "^5.0.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
-    "react-bootstrap": "^1.0.0-beta.17",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.0",
-    "react-image-lightbox": "^5.1.1",
-    "react-responsive-tabs": "^3.3.0",
     "react-share": "^4.1.0"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
-    "prettier": "^1.19.1"
+    "dotenv": "^8.2.0"
   },
   "keywords": [],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Should probs do this...\""

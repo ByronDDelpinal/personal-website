@@ -1,5 +1,4 @@
-import { Link } from 'gatsby';
-import React, { Component } from 'react';
+import React from 'react';
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);

@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { DiscussionEmbed } from 'disqus-react';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
-import Link from 'gatsby-link';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React, { Component } from 'react';
 
@@ -44,8 +43,8 @@ class BlogPostTemplate extends Component {
     const blogPost = this.props.data.contentfulBlogPost;
     const hasContentBlocks =
       blogPost.contentBlocks && blogPost.contentBlocks.length > 0;
-    const relatedBlogPosts = this.props.data.allContentfulBlogPost.nodes;
-    const anyRelatedBlogPosts = relatedBlogPosts.length > 0;
+    // const relatedBlogPosts = this.props.data.allContentfulBlogPost.nodes;
+    // const anyRelatedBlogPosts = relatedBlogPosts.length > 0;
 
     const disqusConfig = {
       shortname: process.env.GATSBY_DISQUS_NAME,

@@ -16,7 +16,7 @@ function BlogPostIndex(props) {
   const getUniqueCategories = () => {
     const allCategories = Array.from(
       props.data.allContentfulBlogPost.nodes
-    ).map(blogPost => blogPost.category);
+    ).map((blogPost) => blogPost.category);
 
     allCategories.unshift('all');
 
@@ -24,7 +24,7 @@ function BlogPostIndex(props) {
       (value, index, self) => self.indexOf(value) === index
     );
 
-    const uniqueObjects = uniqueCategories.map(category => ({
+    const uniqueObjects = uniqueCategories.map((category) => ({
       name: category,
       selected: category === 'all' ? true : false,
     }));
@@ -38,10 +38,10 @@ function BlogPostIndex(props) {
    *
    * @param {string} categoryName - The name of the category
    */
-  const setCategoryToActive = categoryName => {
+  const setCategoryToActive = (categoryName) => {
     const newCategories = Array.from(categories);
 
-    newCategories.map(newCategory => {
+    newCategories.map((newCategory) => {
       newCategory.selected = newCategory.name === categoryName;
       return newCategory;
     });
@@ -56,7 +56,7 @@ function BlogPostIndex(props) {
    *
    * @param {string} categoryName - The name of the category
    */
-  const filterBlogPosts = categoryName => {
+  const filterBlogPosts = (categoryName) => {
     const sortByElement = document.querySelector('#sort-by');
 
     // Handle "All" separately since it's a reset
@@ -72,7 +72,8 @@ function BlogPostIndex(props) {
     const allBlogPosts = Array.from(props.data.allContentfulBlogPost.nodes);
 
     const filteredBlogPosts = allBlogPosts.filter(
-      blogPost => blogPost.category.toLowerCase() === categoryName.toLowerCase()
+      (blogPost) =>
+        blogPost.category.toLowerCase() === categoryName.toLowerCase()
     );
 
     if (sortByElement) sortByElement.value = '';
@@ -88,7 +89,7 @@ function BlogPostIndex(props) {
    *
    * @param {string} direction - asc/desc/null
    */
-  const sortBlogPosts = direction => {
+  const sortBlogPosts = (direction) => {
     if (!direction) {
       // This goes back to the default
       setBlogPosts(props.data.allContentfulBlogPost.nodes);
@@ -129,7 +130,7 @@ function BlogPostIndex(props) {
           {blogPosts.length} Uninteresting Conjectures
         </h2>
         <div className="facets">
-          {categories.map(category => (
+          {categories.map((category) => (
             <button
               className={`facet${category.selected ? ' selected' : ''}`}
               onClick={() => filterBlogPosts(category.name)}
@@ -140,7 +141,7 @@ function BlogPostIndex(props) {
           <select
             className="facet"
             id="sort-by"
-            onChange={event => sortBlogPosts(event.target.value)}
+            onBlur={(event) => sortBlogPosts(event.target.value)}
           >
             <option value="">Sort By ▼</option>
             <option value="asc">Sort: A-Z</option>

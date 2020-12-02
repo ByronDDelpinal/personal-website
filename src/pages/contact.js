@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import Layout from '../components/layout';
 
 // The form on this page works because it's deployed to Netlify and they
 // do some magic around it that makes it work. If you're not deploying there,
 // you may need to handle the form submit on your own.
-const Contact = props => {
+const Contact = (props) => {
   const siteTitle = props.data.site.siteMetadata.title;
 
   return (
@@ -29,7 +28,12 @@ const Contact = props => {
               <input type="hidden" name="form-name" value="contact" />
               <input type="hidden" name="bot-field" />
               <div>
-                <h5>Say Hey 📬</h5>
+                <h5>
+                  Say Hey{' '}
+                  <span aria-label="mailbox with letter in it" role="img">
+                    📬
+                  </span>
+                </h5>
                 <p>
                   Whether you're looking to catch up over coffee, talk about
                   tech, have a jam session, or book me for a software contract,
