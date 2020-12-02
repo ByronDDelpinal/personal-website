@@ -9,7 +9,7 @@ function BlogPreviewList(props) {
       {props.blogPosts.map(blogPost => {
         return (
           props.condensed
-            ? <BlogPreviewCondensed blogPost={blogPost} />
+            ? <BlogPreviewCondensed blogPost={blogPost} withTags={props.withTags}/>
             : <BlogPreview blogPost={blogPost} />
         );
       })}

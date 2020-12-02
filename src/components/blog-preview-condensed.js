@@ -5,7 +5,7 @@ import React from 'react';
 
 const BlogPreview = (props) => {
   const MAX_LENGTH_TITLE = 80;
-  const { blogPost } = props;
+  const { blogPost, withTags } = props;
   const blogPostName =
     blogPost.name > MAX_LENGTH_TITLE
       ? blogPost.name
@@ -13,7 +13,11 @@ const BlogPreview = (props) => {
 
   return (
     <li className="blog-preview condensed" key={blogPost.urlName}>
-      <p className="blog-preview--category">Latest in #{blogPost.category}</p>
+      {withTags
+        ? <p className="blog-preview--category">Latest in #{blogPost.category}</p>
+        : null
+      }
+
       {blogPost.isExternal ? (
         <OutboundLink
           className="blog-preview--image-link"

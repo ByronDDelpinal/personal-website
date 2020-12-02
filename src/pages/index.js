@@ -53,6 +53,7 @@ const IndexPage = (props) => {
           <BlogPreviewList
             condensed={true}
             blogPosts={[techPost[0], personalPost[0], diyPost[0]]}
+            withTags={true}
           />
           <Link to="/and-writes" className="button highlighted">
             <span />

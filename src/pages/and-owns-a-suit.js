@@ -1,4 +1,5 @@
 import { graphql, Link } from 'gatsby';
+import Header from '../components/header';
 import Helmet from 'react-helmet';
 import React from 'react';
 
@@ -17,10 +18,11 @@ const AndOwnsASuitPage = (props) => {
   const siteTitle = props.data.site.siteMetadata.title;
 
   return (
-    <Layout>
+    <Layout hideHeader={true}>
       <Helmet title={siteTitle} />
       <div className="and-owns-a-suit-page">
         <div className="hero">
+          <Header />
           <h2 className="hero--header">
             <span aria-label="envelope" role="img">
               ✉️
@@ -29,87 +31,114 @@ const AndOwnsASuitPage = (props) => {
           </h2>
           <h3 className="hero--sub-header">Just kidding.</h3>
         </div>
-        <section className="current-status">
-          <p>
-            Let's get straight to the point: If you're looking for a resume,{' '}
-            <a href={resume.file.url} rel="noopener noreferrer" target="_blank">
-              I got you covered{' '}
-              <span aria-label="business man in suit" role="img">
-                🕴️
-              </span>
-            </a>
-          </p>
-          <h2>Current Status</h2>
-          <div className="current-status--block">
-            <h3>Company:</h3>
-            <p>{company}</p>
-          </div>
-          <div className="current-status--block">
-            <h3>Job Title:</h3>
-            <p>{jobTitle}</p>
-          </div>
-          <h3>Day-To-Day:</h3> <p>{dayToDay}</p>
-        </section>
-        <section className="brag-sheet">
-          <h2>Brag Sheet</h2>
-          <p>
-            I've had the privelidge to do some great work with some great
-            people. Here are some highlights.
-          </p>
-          <ul>
-            {bragSheet.map((brag) => {
-              return (
-                <div className="brag-sheet--block">
-                  <h3>{brag.title}</h3>
-                  <p>{brag.description}</p>
-                </div>
-              );
-            })}
-            <li>
-              Architected, presented, and led the move from a static faceting
-              and filtering system to a configurable and dynamic system through
-              refactoring.
-            </li>
-            <li>
-              Led the transition out of a monolith to a micro-frontend
-              architecture.
-            </li>
-            <li>
-              Mentored many junior and mid-range developers in the office, in
-              the community, and through the Sparkbox Apprenticeship Program.
-            </li>
-            <li>
-              Recieved the "30 For The Future" award from the Greater Akron
-              Chamber of Commerce
-            </li>
-            <li></li>
-          </ul>
-        </section>
-        <section className="community-involvement">
-          <h2>Community Involvement</h2>
-          <p>
-            Community is everything to me. My community has given so much to me,
-            and it's my hope to repay that debt many times over.
-          </p>
-          <ul>
-            <li>
-              Torchbearer's: Board member (1 year) & Elected board officer (2
-              years)
-            </li>
-            <li>KaBoom! Playground Build</li>
-            <li>Akron Front End Development Group</li>
-          </ul>
-        </section>
+        <div class="top-content">
+          <section className="current-status">
+            <h2 className="top-content--header">Current Status</h2>
+            <div className="current-status--container">
+              <div className="current-status--block">
+                <h3>Company</h3>
+                <p>{company}</p>
+              </div>
+              <div className="current-status--block">
+                <h3>Job Title</h3>
+                <p>{jobTitle}</p>
+              </div>
+            </div>
+            <h3>Day To Day</h3> <p>{dayToDay}</p>
+            <h3>Where I Thrive</h3>
+            <p>
+              I thrive when I'm given the autonomy to lead teams through the
+              creation of robust features and products. My best talent is acting
+              as a conduit between technical and business teams. I have a unique
+              sense of emapthy with both sides of this, giving me the ability to
+              align both business and technical teams on feature and product
+              implementations. Things that I've done that demonstrate this
+              clearly:
+            </p>
+            <ul className="thrive-list">
+              <li>
+                Prepare for concept sprints by gathering business requirements
+                and doing proof-of-concept work to ensure technical feasibility
+              </li>
+              <li>
+                Led concept sprints, explaining technical architecture to the
+                team as well as explaining technical capabilities to the
+                business
+              </li>
+              <li>
+                Aligned multiple teams on process changes when dealing with
+                larger components in order to clarify ownership and governance
+                as well as establish quicker iteration patterns in component
+                maintenance
+              </li>
+              <li>
+                Aligned both business and technical teams on implementing large
+                features through refactoring
+              </li>
+            </ul>
+          </section>
+          <a
+            className="button highlighted resume-link"
+            href={resume.file.url}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            If you're looking for a resume, I've got you covered{' '}
+            <span aria-label="business man in suit" role="img">
+              🕴️
+            </span>
+          </a>
+        </div>
         <section className="professional-writing">
           <div className="blog-four-up">
-            <h2 className="blog-four-up--header light">Technical Writing</h2>
-            <BlogPreviewList condensed={true} blogPosts={blogPosts} />
+            <h2 className="top-content--header">Technical Writing</h2>
+            <BlogPreviewList
+              condensed={true}
+              blogPosts={blogPosts}
+              withTags={false}
+            />
             <Link to="/and-writes" className="button highlighted">
               <span />
               See All
             </Link>
           </div>
         </section>
+        <div class="top-content">
+          <section className="brag-sheet block-list">
+            <h2 className="top-content--header">Brag Sheet</h2>
+            <p>
+              I've had the privelidge to do some great work with some great
+              people, both inside and outside of the office. Not everything can
+              make it to a resume, but I do believe we should celebrate our
+              wins, so I've compiled a list of things that I'm proud of over the
+              course of my professional career:
+            </p>
+            <ul>
+              {bragSheet
+                .sort((a, b) => new Date(b.year) - new Date(a.year))
+                .map((brag) => {
+                  return (
+                    <li className="block-list--block">
+                      <h3>
+                        {brag.title}{' '}
+                        <ul className="category-list">
+                          {brag.categories
+                            ? brag.categories.map((category) => (
+                                <li className={category}>#{category}</li>
+                              ))
+                            : null}
+                        </ul>
+                      </h3>
+                      <p className="year">
+                        {brag.year ? brag.year.substring(0, 4) : ''}
+                      </p>
+                      <p>{brag.description}</p>
+                    </li>
+                  );
+                })}
+            </ul>
+          </section>
+        </div>
         {/* <section className="professional-speaking">
             <h2>Speaking Engagements & Presentations</h2>
           </section> */}
@@ -160,9 +189,11 @@ export const query = graphql`
       jobTitle
       dayToDay
       bragSheet {
+        categories
         description
-        title
         id
+        title
+        year
       }
       resume {
         id

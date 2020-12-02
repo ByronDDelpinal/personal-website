@@ -1,29 +1,96 @@
 .and-owns-a-suit-page {
-  & .hero {
-    height: 300px;
+  & .block-list--block {
+    h3 {
+      display: flex;
+      margin-bottom: 0;
+    }
+
+    & .year {
+      margin-bottom: $spacing-small;
+    }
   }
 
-  & > section {
-    margin: $spacing-medium 0;
-    padding: 0 $spacing-medium;
+  & .hero {
+    height: 18rem;
 
-    &.professional-writing {
-      background-color: $color-dark;
-      padding: 0;
+    & [aria-label="envelope"] {
+      margin-right: 5px;
+    }
+
+    @media (min-width: 700px) {
+      height: 25rem;
+    }
+  }
+
+  & .professional-writing {
+    background-color: $color-dark;
+
+    & .top-content--header {
+      color: $color-light;
+    }
+  }
+
+  & .resume-link {
+    display: block;
+    margin: $spacing-large 0;
+    width: 100%;
+  }
+
+  & .top-content {
+    padding: $spacing-medium;
+
+    &--header {
+      border-bottom: 3px dashed $color-secondary;
+      color: $color-dark;
+      flex-basis: 100%;
+      font-size: $fontsize-large;
+      margin-bottom: $spacing-medium;
+      margin-top: $spacing-large;
+    }
+
+    @media (min-width: 1300px) {
+      padding: $spacing-small calc((100vw - 1300px) / 2);
+    }
+  }
+
+  & .category-list {
+    align-items: center;
+    display: flex;
+
+    & li {
+      color: $color-light;
+      display: inline-block;
+      font-size: 1rem;
+      margin-left: $spacing-small;
+      padding: $spacing-xsmall;
+
+      &.community {
+        background-color: $color-secondary;
+      }
+
+      &.work {
+        background-color: $color-primary;
+      }
     }
   }
 
   & .current-status {
-    &--block {
-      display: inline-block;
+    &--block:last-child {
+      text-align: right;
+    }
 
-      & h3 {
-        display: inline-block;
-      }
+    &--container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $spacing-small;
+    }
+  }
 
-      & p {
-        display: inline-block;
-      }
+  & .thrive-list {
+    padding-left: 20px;
+
+    & li {
+      list-style-type: square;
     }
   }
 }
