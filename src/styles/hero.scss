@@ -15,10 +15,6 @@
     @media (min-width: 600px) {
       text-shadow: 2px 3px 0px $color-dark;
     }
-
-    @media (min-width: 1000px) {
-      text-shadow: 3px 4px 0px $color-dark;
-    }
   }
 
   &--sub-header {
@@ -30,10 +26,6 @@
 
     @media (min-width: 600px) {
       text-shadow: 2px 3px 0px $color-dark;
-    }
-
-    @media (min-width: 1000px) {
-      text-shadow: 3px 4px 0px $color-dark;
     }
   }
 

@@ -80,7 +80,6 @@ h2.section-title {
   font-size: 36px;
   padding-top: $spacing-large;
   margin-bottom: 25px;
-  font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -245,7 +244,7 @@ h2.section-title:after {
   border-width: 1px;
   color: $color-primary;
   display: inline-block;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "PT Sans Narrow",Helvetica,Arial,sans-serif;
   font-size: 1.2rem;
   line-height: 1;
   margin: 10px 5px;
@@ -313,7 +312,6 @@ h2.section-title:after {
 }
 
 .sidebar-blk h4 {
-  font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -356,7 +354,7 @@ h2.section-title:after {
 .sidebar-blk ul li a {
   text-decoration: none;
   color: #002d52;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "PT Sans Narrow",Helvetica,Arial,sans-serif;
   line-height: 20px;
 }
 /*/ Sidebar /*/

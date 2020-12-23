@@ -11,8 +11,8 @@ import Footer from './footer';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
+import "fontsource-bangers"
 import '../styles/index.scss';
-import 'bootstrap/dist/css/bootstrap.css';
 import shareImg from '../images/portrait-outdoors.jpg';
 
 const Template = ({ children, hideHeader, selectedPage }) => (

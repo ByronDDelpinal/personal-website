@@ -11,6 +11,10 @@
     width: 100%;
   }
 
+  & .post-content {
+    padding: $spacing-medium;
+  }
+
   & #disqus_thread {
     width: 100%;
   }

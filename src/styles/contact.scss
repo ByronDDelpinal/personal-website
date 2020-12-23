@@ -28,8 +28,6 @@
 
     & h5 {
       color: #000;
-      font-size: 30px;
-      font-family: "Josefin Sans", sans-serif;
       font-weight: bold;
       text-transform: uppercase;
       margin-bottom: 30px;
@@ -51,7 +49,7 @@
         display: block;
         width: 100%;
         background: #e6e6e6;
-        font-family: "Josefin Sans", sans-serif;
+        font-family: "PT Sans Narrow",Helvetica,Arial,sans-serif;
         font-size: 15px;
         line-height: 1.5;
         color: #666666;
@@ -65,7 +63,7 @@
         display: block;
         margin-bottom: 5px;
         font-size: 16px;
-        font-family: "Josefin Sans", sans-serif;
+        font-family: "PT Sans Narrow",Helvetica,Arial,sans-serif;
       }
 
       & textarea {

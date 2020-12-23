@@ -1,15 +1,5 @@
-@font-face {
-  font-family: 'Josefin Sans';
-  src: url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&display=swap)
-}
-
-@font-face {
-  font-family: 'PT Sans Narrow';
-  src: url(https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap)
-}
-
 body {
-  font-family: 'Josefin Sans';
+  font-family: "PT Sans Narrow",Helvetica,Arial,sans-serif;
   font-weight: 300;
   color: $color-dark; //color variable set elsewhere
   -webkit-text-size-adjust: 100%; //fix for iOS
@@ -20,8 +10,15 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'PT Sans Narrow';
+  font-family: 'Bangers',Helvetica,Arial,sans-serif;
   font-weight: 700 !important;
+  letter-spacing: 4px;
+}
+
+h3,
+h4,
+h5 {
+  letter-spacing: 2px;
 }
 
 h1 {
@@ -58,4 +55,34 @@ h3 {
   @media (min-width: 1000px) {
     font-size: $fontsize-large;
   }
+}
+
+h5 {
+  font-size: $fontsize-medium;
+}
+
+li, p {
+  font-size: $fontsize-small;
+  line-height: 1.5;
+}
+
+p {
+  margin: $spacing-small 0 $spacing-medium 0;
+}
+
+.blog-preview--title a {
+  font-family: 'PT Sans Narrow',Helvetica,Arial,sans-serif;
+  font-size: $fontsize-medium;
+
+  @media (min-width: 700px) {
+    font-size: $fontsize-small;
+  }
+
+  @media (min-width: 1000px) {
+    font-size: $fontsize-medium;
+  }
+}
+
+.button {
+  font-family: 'PT Sans Narrow',Helvetica,Arial,sans-serif;
 }

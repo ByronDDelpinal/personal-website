@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 export class Sucess extends Component {
   render() {
     return (
-      <div className="contact-page container-contact100">
+      <div className="contact-page">
         <Layout>
           <section className="contact-us">
             <div className="wrap-contact">

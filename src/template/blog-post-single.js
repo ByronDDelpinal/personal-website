@@ -153,7 +153,6 @@ class BlogPostTemplate extends Component {
                   </div>
                 </div>
               ) : null} */}
-          <DiscussionEmbed {...disqusConfig} />
         </div>
       </Layout>
     );

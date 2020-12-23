@@ -11,6 +11,13 @@
     margin-bottom: $spacing-medium;
   }
 
+  &--main-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 300px;
+  }
+
   &--top-info {
     margin: 0;
 
@@ -35,9 +42,11 @@
 
   &--top-section {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 
     @media (min-width: 700px) {
+      align-items: flex-start;
       flex-wrap: nowrap;
     }
   }

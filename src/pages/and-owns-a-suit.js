@@ -111,7 +111,7 @@ const AndOwnsASuitPage = (props) => {
               people, both inside and outside of the office. Not everything can
               make it to a resume, but I do believe we should celebrate our
               wins, so I've compiled a list of things that I'm proud of over the
-              course of my professional career:
+              course of my adult life:
             </p>
             <ul>
               {bragSheet

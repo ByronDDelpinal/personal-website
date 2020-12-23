@@ -13,6 +13,7 @@
 .site-header {
   align-items: center;
   background: $color-dark;
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
