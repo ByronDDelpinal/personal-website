@@ -1,6 +1,4 @@
 .blog-post {
-  background-color: $color-dark;
-  color: $color-light;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -12,7 +10,8 @@
   }
 
   & .post-content {
-    padding: $spacing-medium;
+    padding: $spacing-medium 0;
+    width: 100%;
   }
 
   & #disqus_thread {
