@@ -1,5 +1,4 @@
 import { graphql, Link } from 'gatsby';
-import Header from '../components/header';
 import Helmet from 'react-helmet';
 import React from 'react';
 
@@ -18,17 +17,16 @@ const AndOwnsASuitPage = (props) => {
   const siteTitle = props.data.site.siteMetadata.title;
 
   return (
-    <Layout hideHeader={true}>
+    <Layout selectedPage="work">
       <Helmet title={siteTitle} />
       <div className="and-owns-a-suit-page">
         <div className="hero">
-          <Header />
-          <h2 className="hero--header">
+          <h1 className="hero--header">
             <span aria-label="envelope" role="img">
               ✉️
             </span>{' '}
             Per My Last Email...
-          </h2>
+          </h1>
           <h3 className="hero--sub-header">Just kidding.</h3>
         </div>
         <div class="top-content">
@@ -57,7 +55,7 @@ const AndOwnsASuitPage = (props) => {
             </p>
             <ul className="thrive-list">
               <li>
-                Prepare for concept sprints by gathering business requirements
+                Prepared for concept sprints by gathering business requirements
                 and doing proof-of-concept work to ensure technical feasibility
               </li>
               <li>
@@ -72,8 +70,9 @@ const AndOwnsASuitPage = (props) => {
                 maintenance
               </li>
               <li>
-                Aligned both business and technical teams on implementing large
-                features through refactoring
+                Greatly increased code quality by shaping large feature
+                implementations to be completed through refactoring instead
+                of additive complexity
               </li>
             </ul>
           </section>
@@ -119,7 +118,7 @@ const AndOwnsASuitPage = (props) => {
                 .map((brag) => {
                   return (
                     <li className="block-list--block">
-                      <h3>
+                      <h3 class="title">
                         {brag.title}{' '}
                         <ul className="category-list">
                           {brag.categories

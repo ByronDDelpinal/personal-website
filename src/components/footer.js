@@ -9,7 +9,7 @@ function getRandomInt(min, max) {
 const Footer = () => {
   const footerTextOptions = [
     'Life is amazing. Enjoy it.',
-    'Believe in yourself.',
+    'Only big goals.',
     'Be good to eachother.',
     'You\'re awesome.',
     'Do whatever makes you happy.'

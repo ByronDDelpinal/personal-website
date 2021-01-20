@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: $spacing-medium calc((100vw - 1300px) / 2);
+  padding: $spacing-medium calc((100vw - #{$max-page-width}) / 2);
 
   & .entry-media {
     flex-basis: 100%;

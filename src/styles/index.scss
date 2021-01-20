@@ -73,7 +73,21 @@ img {
 }
 
 section {
+  padding: $spacing-medium 0;
   position: relative;
+
+  &.dark {
+    background-color: $color-dark;
+    color: $color-light;
+
+    & a {
+      color: $color-highlight;
+
+      &:hover {
+        color: $color-light;
+      }
+    }
+  }
 }
 
 h2.section-title {
@@ -91,6 +105,17 @@ h2.section-title:after {
   height: 2px;
   width: 50px;
   margin: 20px auto 0 auto;
+}
+
+.small-paragraph {
+  font-size: $fontsize-small;
+  margin: $spacing-small auto;
+  max-width: $max-page-width;
+  padding: 0 $spacing-medium;
+
+  @media (min-width: 700px) {
+    padding: 0;
+  }
 }
 
 .photo-credit {
@@ -249,7 +274,7 @@ h2.section-title:after {
   line-height: 1;
   margin: 10px 5px;
   outline: none !important;
-  padding: 8px 25px 4px 25px;
+  padding: 6px 25px;
   text-transform: uppercase;
 }
 
@@ -272,7 +297,7 @@ h2.section-title:after {
 .facet:last-child {
   appearance: none;
   border-radius: 0;
-  padding: 8px 15px 4px 15px;
+  padding: 6px 15px;
   position: relative;
   width: 9rem;
 }

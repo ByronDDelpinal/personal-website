@@ -29,6 +29,14 @@ const Header = props => {
           </li>
           <li>
             <Link
+              className={`${props.selectedPage === 'work' ? 'selected' : ''}`}
+              to="/and-owns-a-suit/"
+            >
+              Work
+            </Link>
+          </li>
+          <li>
+            <Link
               className={`${props.selectedPage === 'writes' ? 'selected' : ''}`}
               to="/and-writes/"
             >

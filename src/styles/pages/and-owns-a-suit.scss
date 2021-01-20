@@ -5,8 +5,13 @@
       margin-bottom: 0;
     }
 
+    & .title {
+      line-height: 1.2;
+    }
+
     & .year {
-      margin-bottom: $spacing-small;
+      line-height: 1.2;
+      margin: 0 0 $spacing-small 0;
     }
   }
 
@@ -31,6 +36,7 @@
   }
 
   & .resume-link {
+    box-sizing: border-box;
     display: block;
     margin: $spacing-large 0;
     width: 100%;
@@ -48,8 +54,8 @@
       margin-top: $spacing-large;
     }
 
-    @media (min-width: 1300px) {
-      padding: $spacing-small calc((100vw - 1300px) / 2);
+    @media (min-width: $max-page-width) {
+      padding: $spacing-small calc((100vw - #{$max-page-width}) / 2);
     }
   }
 

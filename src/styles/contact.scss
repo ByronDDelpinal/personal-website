@@ -2,7 +2,7 @@
   background-color: $color-dark;
   padding: $spacing-medium;
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: $max-page-width;
 
   & .wrap-contact {
     background: #fafdfe;

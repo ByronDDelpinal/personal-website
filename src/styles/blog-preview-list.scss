@@ -1,9 +1,10 @@
 .blog-preview-list {
   display: flex;
+  flex-basis: 100%;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: $spacing-medium auto 0 auto;
-  max-width: 1300px;
+  max-width: $max-page-width;
   padding: 0;
   width: 100%;
 }

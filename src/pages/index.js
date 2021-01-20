@@ -38,10 +38,23 @@ const IndexPage = (props) => {
               <span />
               Here For Business
             </Link>
-            <a className="button" href="/">
+            <a className="button" href="/about">
               Keeping It Personal
             </a>
           </div>
+        </section>
+        <section className="dark">
+          <p className="small-paragraph">
+            I consider myself a community enthusiast and professional
+            procrastinator. I've worn many hats and dawned many titles: Software
+            Engineer, Husband, Consultant, Teen Dad, Public Speaker, Aspiring
+            Woodworker, Adult Child, and Mentor just to name a few. My favorite
+            hobby is either spilling drinks or collecting books I may one day
+            read. If any of that resonates with you, and you'd like to talk,
+            <Link to="/contact"> send me an email and let's hop on a Zoom or
+            grab some coffee and chat</Link>!
+          </p>
+
         </section>
         <div className="blog-four-up">
           <h2 className="blog-four-up--header">

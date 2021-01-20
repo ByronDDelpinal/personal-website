@@ -35,21 +35,47 @@ const BlogPreview = (props) => {
         </Link>
       )}
       <h2 className="blog-preview--title">
-        <Link to={`/and-writes-about/${blogPost.urlName}`}>
-          {' '}
-          {blogPost.name > MAX_LENGTH_TITLE
-            ? blogPost.name
-            : blogPost.name.substring(0, MAX_LENGTH_TITLE)}{' '}
-        </Link>
+        {blogPost.isExternal ? (
+          <OutboundLink
+            href={blogPost.externalUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {' '}
+              {blogPost.name > MAX_LENGTH_TITLE
+                ? blogPost.name
+                : blogPost.name.substring(0, MAX_LENGTH_TITLE)}
+            {' '}
+          </OutboundLink>
+        ) : (
+          <Link to={`/and-writes-about/${blogPost.urlName}`}>
+            {' '}
+            {blogPost.name > MAX_LENGTH_TITLE
+              ? blogPost.name
+              : blogPost.name.substring(0, MAX_LENGTH_TITLE)}{' '}
+          </Link>
+        )}
       </h2>
       <div className="blog-preview--summary">{blogPost.contentSummary}</div>
-      <Link
-        to={`/and-writes-about/${blogPost.urlName}`}
-        className="blog-preview--read-more"
-      >
-        <span />
-        Read More
-      </Link>
+      {blogPost.isExternal ? (
+        <OutboundLink
+          className="blog-preview--read-more"
+          href={blogPost.externalUrl}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span />
+          Read More
+        </OutboundLink>
+      ) : (
+        <Link
+          to={`/and-writes-about/${blogPost.urlName}`}
+          className="blog-preview--read-more"
+        >
+          <span />
+          Read More
+        </Link>
+      )}
     </li>
   );
 };

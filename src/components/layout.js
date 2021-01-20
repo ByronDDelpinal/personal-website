@@ -11,7 +11,8 @@ import Footer from './footer';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-import "fontsource-bangers"
+import 'fontsource-bangers'
+import 'fontsource-pt-sans-narrow'
 import '../styles/index.scss';
 import shareImg from '../images/portrait-outdoors.jpg';
 
