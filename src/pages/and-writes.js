@@ -148,7 +148,7 @@ function BlogPostIndex(props) {
             <option value="desc">Sort: Z-A</option>
           </select>
         </div>
-        <BlogPreviewList blogPosts={blogPosts} />
+        <BlogPreviewList blogPosts={blogPosts} withTags={true} />
       </Layout>
     </div>
   );

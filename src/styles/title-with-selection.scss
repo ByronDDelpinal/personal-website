@@ -1,6 +1,6 @@
 .title-with-selections {
   display: block;
-  margin: $spacing-xlarge $spacing-medium;
+  margin: $spacing-xlarge 0;
 
   &--header {
     margin-bottom: 25px;
@@ -10,7 +10,7 @@
   & .selections-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 0;
     width: 100%;
 
@@ -22,7 +22,7 @@
       }
 
       @media (min-width: 800px) {
-        flex-basis: 40%;
+        flex-basis: 45%;
         min-width: 18rem;
 
         &:first-child {

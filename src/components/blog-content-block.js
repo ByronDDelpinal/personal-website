@@ -40,15 +40,15 @@ const BlogContentBlock = props => {
   const { content } = props;
 
   return (
-    <section className="blog-content-block">
+    <div className="blog-content-block">
       <Img
         backgroundColor={'#f4f8fb'}
         fluid={content.image.fluid}
         objectFit="none"
       />
-      <h4>{content.title}</h4>
+      <h2>{content.title}</h2>
       <p>{getRichTextContent(content.content.json.content)}</p>
-    </section>
+    </div>
   );
 }
 

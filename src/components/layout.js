@@ -13,6 +13,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import 'fontsource-bangers'
 import 'fontsource-pt-sans-narrow'
+import 'fontsource-pt-sans-narrow/700.css'
 import '../styles/index.scss';
 import shareImg from '../images/portrait-outdoors.jpg';
 

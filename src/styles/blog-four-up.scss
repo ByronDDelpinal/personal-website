@@ -3,8 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: $spacing-large auto 0 auto;
-  padding: $spacing-medium;
+  margin: $spacing-large 0;
   width: 100%;
 
   &--description {
@@ -43,7 +42,7 @@
 
     @media (min-width: 700px) {
       margin-top: $spacing-large;
-      width: 31%;
+      width: 100%;
     }
   }
 

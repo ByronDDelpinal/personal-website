@@ -4,6 +4,7 @@
   border-image-slice: 1;
   border-image-source: $gradient-button;
   border-width: 5px;
+  box-sizing: border-box;
   color: $color-primary;
   font-size: $fontsize-small;
   padding: 1rem 2rem;

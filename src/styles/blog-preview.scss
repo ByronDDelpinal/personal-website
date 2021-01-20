@@ -54,7 +54,7 @@
 
     @media (min-width: 700px) {
       flex-basis: 31%;
-      margin: 1%;
+      margin: 0;
     }
   }
 
@@ -85,8 +85,8 @@
     color: $color-primary;
     display: block;
     margin: auto 0 0 0;
-    padding-bottom: $spacing-small;
-    padding-right: $spacing-small;
+    padding-bottom: $spacing-medium;
+    padding-right: $spacing-medium;
     text-align: right;
     width: 100%;
 
@@ -97,14 +97,16 @@
   }
 
   &--summary {
-    margin: $spacing-small;
+    font-weight: 100;
+    margin: $spacing-medium;
   }
 
   &--title {
     box-sizing: border-box;
+    letter-spacing: 0;
     line-height: 1;
     margin: 0;
-    padding: $spacing-small $spacing-small 0 $spacing-small;
+    padding: $spacing-medium $spacing-medium 0 $spacing-medium;
 
     & a {
       align-items: center;

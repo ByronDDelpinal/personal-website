@@ -55,8 +55,8 @@ const Backstory = () => {
         my summers either in Tennessee with my nana or hanging out at my dad’s
         shop where he’d have to ask me six times for the same tool because I was
         either playing Pokemon on my Gameboy or had no clue what the tools were
-        actually called. It wasn’t the world’s best childhood, but it was my own
-        and I enjoyed it most of the time.
+        actually called. That's changed quite a bit these days, but more on that
+        later.
       </p>
       <p>
         My parents got divorced when I was in middle school. It wasn't pretty.
@@ -71,47 +71,80 @@ const Backstory = () => {
         mallets with the wind symphony.
       </p>
       <p>
-        At this point, high school was going great for me. I didn’t have a care
-        in the world. That all took a turn when I was 16. Having a kid when
-        you're in high school is tough enough to handle, but when his mom left
-        us two years later I thought I'd never recover. I was a single dad in
-        college who came from a poor family and had to take out extra student
-        loans to pay the bills since we couldn't exactly live in the dorms with
-        everyone else. I ended up dropping out and working in retail for a year,
-        living paycheck to paycheck because working full-time and raising the
-        baby was difficult enough. Throwing school on top of that was just
-        impossible. It was a really depressing time watching all of my friends
-        live their "college years" while I had to worry about trying to get
-        overtime hours to feed a kid. Long story short, I eventually got the
-        motivation to go back to school, with some help from my family to watch
-        Aiden while I went to class. I networked as much as I could, and while I
-        was staying in the electronics lab until 2:00 AM and not seeing Aiden
-        very much, I knew it would be worth it in the end.
+        A lot of people look back at their high school experience as a time when
+        the world seemed so much easier. A simpler time, with very little
+        responsibility. High School Byron didn’t really worry about taxes or
+        politics. He didn’t concern himself with what was happening in other
+        parts of the world or whatever the deal was with Julius Caesar (He died?
+        Or something?). Those things were Future Byron’s problems.
       </p>
       <p>
-        Turns out, I met my amazing future wife, Kirsten, during that year I
-        dropped out and worked retail full-time. We both worked at Staples. At
-        school, all that networking and extra effort turned into my first
-        full-time job offer in the tech industry at an embedded systems company,
-        which I've been fortunate enough to turn into a great career.
+        One portion of his education that High School Byron should have paid
+        more attention to, however, was sex education. You can imagine the
+        difficulty this care-free, sweet, summer child had in explaining to his
+        aunt and uncle during his sophomore year that his girlfriend at was
+        pregnant. My aunt and uncle took me in when I was 14 and their reward a
+        year and a half later was having to make room for an infant in the
+        house. They’re saints and I never thanked them enough at the time. I
+        can’t imagine the stress this put on them.
       </p>
       <p>
-        Currently, I work as a consultant at Sparkbox focusing on web
-        development. They’re a Dayton-based firm that allows me to work from
-        home and encourages me to be involved in my community. While working as
-        a consultant, I've gotten the chance to do things like:
-        <ul>
-          <li>Build multiple applications for startups from scratch</li>
-          <li>Establish myself as a tech lead at a fortune 100 retailer</li>
-          <li>
-            Travel and speak at numerous technical conferences around the
-            country
-          </li>
-        </ul>
+        I don’t know the stats on high school sweetheart relationships lasting,
+        but I’m guessing the numbers are even lower between couples who dated on
+        and off throughout high school and had a baby together. Either way,
+        Aiden’s mom and I didn’t last very long.
+      </p>
+      <p>
+        Fast-forward to 2012. 22-year-old Byron was now working part-time at the
+        computer lab in the engineering department at the University of Akron
+        and trying to finish a degree in computer engineering (Spoiler alert: He
+        didn’t. No regrets). I was a single dad in college who came from a poor
+        family and had to take out extra student loans to pay the bills since we
+        couldn't exactly live in the dorms with everyone else. I ended up
+        dropping out and working in retail for a few years, living paycheck to
+        paycheck. Working full-time and raising the baby was difficult enough.
+        Throwing school on top of that was just impossible. It was a really
+        depressing time watching all of my friends live their "college years"
+        while I had to worry about trying to get overtime hours to feed a kid.
+      </p>
+      <p>
+        Enter, Kirsten. I met my wife a year or two prior to us dating when we
+        both worked at Staples. We weren’t very fond of each other initially. I
+        took my job very seriously, trying to get promoted with thoughts of
+        quitting college to get into middle-management at the retailer, and she
+        was Marshawn Lynch at a press conference every day, killing time and
+        saving money for her future career as a designer. Our goals didn’t
+        align. We didn’t start dating until after we reconnected on Facebook and
+        actually took the time to get to know each other. She knew I had a kid,
+        but it wasn’t something we discussed regularly. It took a while before I
+        introduced the two. We took that very slow, and I remained protective of
+        the relationship I had with Aiden. I had only introduced him to the two
+        people with which I had serious relationships.
+      </p>
+      <p>
+        Kirsten and I moved in together in 2013 and made the transition to
+        officially becoming a “blended” household, although I don’t think we
+        ever used that term to describe it. We lived in Highland Square. Around
+        the same time, Aiden’s mom had come back into his life in a more serious
+        capacity. It was a big change for a lot of reasons.
+      </p>
+      <p>
+        We've had a long journey since then, but it's been mostly uphill. I got
+        my first real software development job in 2012 and Kirsten started
+        working at Goodyear right after college in 2013.
+      </p>
+      <p>
+        We finally bought our first home in Green, OH in the fall of 2017 and
+        welcomed our first girl, Evelyn into the world in February of 2018. Even
+        more recently, we welcomed our second girl, Lillian, into this slightly
+        crazier world shortly after Christmas in 2020. Having a baby in 2020
+        felt like the equivelant of eloping. Hardly anyone even saw Kirsten
+        while she was pregnant.
+      </p>
+      <p>
         Life was hard for a while, but I live the life I always wanted to now
         and I couldn't be happier. I'm doing my best to provide the childhood I
-        never had to my now two kids, Aiden and Evelyn, and giving back to the
-        community that made it all possible however I can.
+        never had to my kids.
       </p>
     </section>
   );

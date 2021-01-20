@@ -10,7 +10,7 @@ function BlogPreviewList(props) {
         return (
           props.condensed
             ? <BlogPreviewCondensed blogPost={blogPost} withTags={props.withTags}/>
-            : <BlogPreview blogPost={blogPost} />
+            : <BlogPreview blogPost={blogPost} withTags={props.withTags}/>
         );
       })}
     </ul>

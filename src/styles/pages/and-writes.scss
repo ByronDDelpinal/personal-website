@@ -1,11 +1,55 @@
 /** Page **/
 .and-writes-page {
-  & .main-content {
-    background-color: $color-dark;
+  & .facets {
+    text-align-last: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0;
+
+    & .facet {
+      background: none;
+      border: 10px solid;
+      border-image-slice: 1;
+      border-image-source: $gradient-button;
+      border-width: 1px;
+      color: $color-primary;
+      display: inline-block;
+      font-family: 'PT Sans Narrow', Helvetica, Arial, sans-serif;
+      font-size: 1.2rem;
+      line-height: 1;
+      margin: 10px 5px;
+      outline: none !important;
+      padding: 6px 25px;
+      text-transform: uppercase;
+
+      &:hover {
+        background-image: $gradient-button;
+        color: $color-light;
+        cursor: pointer;
+      }
+    }
+  }
+
+  & .facet.selected,
+  & .facet.selected:hover {
+    background-image: $gradient-button;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-image-source: $gradient-button;
+    border-width: 5px;
+    color: $color-light;
+  }
+
+  & .facet:last-child {
+    appearance: none;
+    border-radius: 0;
+    padding: 6px 15px;
+    position: relative;
+    width: 9rem;
   }
 
   & .section-title {
-    color: $color-light;
     margin-bottom: 0;
     text-align: center;
   }

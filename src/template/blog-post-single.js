@@ -99,8 +99,7 @@ class BlogPostTemplate extends Component {
             },
           ]}
         />
-
-        <div className="blog-post">
+        <section className="blog-post">
           <div className="entry-media">
             <Img
               backgroundColor={'#f4f8fb'}
@@ -109,18 +108,14 @@ class BlogPostTemplate extends Component {
             />
           </div>
           <div className="post-content">
-            <div className="business-content">
+              <h1>{blogPost.name}</h1>
               <h3>TL;DR</h3>
               <p>{blogPost.contentSummary}</p>
-            </div>
-            <div className="business-content">
-              <h3>{blogPost.name}</h3>
               {getRichTextContent(blogPost.content.json.content || [])}
               {hasContentBlocks &&
                 blogPost.contentBlocks.map(contentBlock => (
                   <BlogContentBlock content={contentBlock} />
                 ))}
-            </div>
           </div>
           {/* Sidebar Stuff Goes Here, need to change back to col-lg-7 col-md-7 */}
           {/* {anyRelatedBlogPosts ? (
@@ -153,7 +148,7 @@ class BlogPostTemplate extends Component {
                   </div>
                 </div>
               ) : null} */}
-        </div>
+        </section>
       </Layout>
     );
   }

@@ -1,5 +1,7 @@
 .and-owns-a-suit-page {
   & .block-list--block {
+    margin-top: $spacing-medium;
+
     h3 {
       display: flex;
       margin-bottom: 0;
@@ -10,6 +12,9 @@
     }
 
     & .year {
+      align-items: center;
+      display: flex;
+      font-weight: bold;
       line-height: 1.2;
       margin: 0 0 $spacing-small 0;
     }
@@ -18,7 +23,7 @@
   & .hero {
     height: 18rem;
 
-    & [aria-label="envelope"] {
+    & [aria-label='envelope'] {
       margin-right: 5px;
     }
 
@@ -43,32 +48,29 @@
   }
 
   & .top-content {
-    padding: $spacing-medium;
+    padding: 0;
 
     &--header {
       border-bottom: 3px dashed $color-secondary;
       color: $color-dark;
       flex-basis: 100%;
-      font-size: $fontsize-large;
       margin-bottom: $spacing-medium;
       margin-top: $spacing-large;
-    }
-
-    @media (min-width: $max-page-width) {
-      padding: $spacing-small calc((100vw - #{$max-page-width}) / 2);
+      max-width: $max-page-width;
     }
   }
 
   & .category-list {
     align-items: center;
-    display: flex;
+    display: inline-block;
+    margin-left: $spacing-small;
 
     & li {
       color: $color-light;
       display: inline-block;
       font-size: 1rem;
       margin-left: $spacing-small;
-      padding: $spacing-xsmall;
+      padding: 0 $spacing-small;
 
       &.community {
         background-color: $color-secondary;
@@ -93,7 +95,7 @@
   }
 
   & .thrive-list {
-    padding-left: 20px;
+    margin: $spacing-xsmall 0 0 $spacing-medium;
 
     & li {
       list-style-type: square;

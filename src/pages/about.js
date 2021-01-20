@@ -10,11 +10,10 @@ import Layout from '../components/layout';
 const About = (props) => {
   const siteTitle = props.data.site.siteMetadata.title;
   return (
-    <div>
+    <>
       <Helmet title={siteTitle} />
       <Layout selectedPage="about">
-        <section className="aboutpage">
-          <div className="aboutpage--top-section">
+          <section className="aboutpage--top-section">
             <div className="image-container aboutpage--main-image">
               <img src={aboutImg} alt="Byron outdoors with a suit jacket on" />
               <p className="photo-credit">
@@ -56,14 +55,13 @@ const About = (props) => {
                 children.
               </p>
             </div>
-          </div>
+          </section>
           {
             // <FunFacts />
           }
           <BackStory />
-        </section>
       </Layout>
-    </div>
+    </>
   );
 };
 

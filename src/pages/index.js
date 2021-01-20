@@ -19,10 +19,10 @@ const IndexPage = (props) => {
         <div className="hero">
           <Header />
           <h1 className="hero--header">
+            Hey, I'm Byron{' '}
             <span aria-label="hand waving" role="img">
               👋🏼
-            </span>{' '}
-            Hey, I'm Byron
+            </span>
           </h1>
           <h3 className="hero--sub-header">
             I write software and do cool stuff. <br />
@@ -43,20 +43,21 @@ const IndexPage = (props) => {
             </a>
           </div>
         </section>
-        <section className="dark">
-          <p className="small-paragraph">
+        <section className="dark lets-talk">
+          <h3 className="small-paragraph">
             I consider myself a community enthusiast and professional
             procrastinator. I've worn many hats and dawned many titles: Software
             Engineer, Husband, Consultant, Teen Dad, Public Speaker, Aspiring
             Woodworker, Adult Child, and Mentor just to name a few. My favorite
             hobby is either spilling drinks or collecting books I may one day
             read. If any of that resonates with you, and you'd like to talk,
-            <Link to="/contact"> send me an email and let's hop on a Zoom or
-            grab some coffee and chat</Link>!
-          </p>
-
+            <Link to="/contact"> send me an email!</Link>!
+          </h3>
+          <Link to="/contact" className="button highlighted">
+            Let's Talk!
+          </Link>
         </section>
-        <div className="blog-four-up">
+        <section className="blog-four-up">
           <h2 className="blog-four-up--header">
             Latest Rants{' '}
             <span aria-label="megaphone" role="img">
@@ -68,11 +69,11 @@ const IndexPage = (props) => {
             blogPosts={[techPost[0], personalPost[0], diyPost[0]]}
             withTags={true}
           />
-          <Link to="/and-writes" className="button highlighted">
+          <Link to="/and-writes" className="button">
             <span />
             See All
           </Link>
-        </div>
+        </section>
       </div>
     </Layout>
   );

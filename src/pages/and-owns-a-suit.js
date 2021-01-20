@@ -22,10 +22,10 @@ const AndOwnsASuitPage = (props) => {
       <div className="and-owns-a-suit-page">
         <div className="hero">
           <h1 className="hero--header">
+            Per My Last Email{' '}
             <span aria-label="envelope" role="img">
               ✉️
-            </span>{' '}
-            Per My Last Email...
+            </span>
           </h1>
           <h3 className="hero--sub-header">Just kidding.</h3>
         </div>
@@ -34,15 +34,10 @@ const AndOwnsASuitPage = (props) => {
             <h2 className="top-content--header">Current Status</h2>
             <div className="current-status--container">
               <div className="current-status--block">
-                <h3>Company</h3>
-                <p>{company}</p>
-              </div>
-              <div className="current-status--block">
-                <h3>Job Title</h3>
-                <p>{jobTitle}</p>
+                <h3>{jobTitle} at {company}</h3>
               </div>
             </div>
-            <h3>Day To Day</h3> <p>{dayToDay}</p>
+            <p>{dayToDay}</p>
             <h3>Where I Thrive</h3>
             <p>
               I thrive when I'm given the autonomy to lead teams through the
@@ -75,8 +70,7 @@ const AndOwnsASuitPage = (props) => {
                 of additive complexity
               </li>
             </ul>
-          </section>
-          <a
+            <a
             className="button highlighted resume-link"
             href={resume.file.url}
             rel="noopener noreferrer"
@@ -87,6 +81,7 @@ const AndOwnsASuitPage = (props) => {
               🕴️
             </span>
           </a>
+          </section>
         </div>
         <section className="professional-writing">
           <div className="blog-four-up">
@@ -120,6 +115,9 @@ const AndOwnsASuitPage = (props) => {
                     <li className="block-list--block">
                       <h3 class="title">
                         {brag.title}{' '}
+                      </h3>
+                      <p className="year">
+                        {brag.year ? brag.year.substring(0, 4) : ''}
                         <ul className="category-list">
                           {brag.categories
                             ? brag.categories.map((category) => (
@@ -127,9 +125,6 @@ const AndOwnsASuitPage = (props) => {
                               ))
                             : null}
                         </ul>
-                      </h3>
-                      <p className="year">
-                        {brag.year ? brag.year.substring(0, 4) : ''}
                       </p>
                       <p>{brag.description}</p>
                     </li>
