@@ -32,11 +32,7 @@ const AndOwnsASuitPage = (props) => {
         <div class="top-content">
           <section className="current-status">
             <h2 className="top-content--header">Current Status</h2>
-            <div className="current-status--container">
-              <div className="current-status--block">
-                <h3>{jobTitle} at {company}</h3>
-              </div>
-            </div>
+            <h3>{jobTitle} at {company}</h3>
             <p>{dayToDay}</p>
             <h3>Where I Thrive</h3>
             <p>

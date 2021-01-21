@@ -61,8 +61,12 @@ h5 {
 }
 
 li, p {
-  font-size: $fontsize-small;
+  font-size: $fontsize-xsmall;
   line-height: 1.4;
+
+  @media (min-width: 600px) {
+    font-size: $fontsize-small;
+  }
 }
 
 p {

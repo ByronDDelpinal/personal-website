@@ -6,6 +6,9 @@ import React from 'react';
 const BlogPreview = (props) => {
   const MAX_LENGTH_TITLE = 80;
   const { blogPost, withTags } = props;
+
+  if (!blogPost) return null;
+
   const blogPostName =
     blogPost.name > MAX_LENGTH_TITLE
       ? blogPost.name
