@@ -51,7 +51,7 @@ const About = (props) => {
                 both in the office and in his community with a 30 For The Future
                 award by the Greater Akron Chamber of Commerce. Byron enjoys
                 playing and creating music in his spare time, but you can
-                usually find him outside with his wife and two beautiful
+                usually find him outside with his wife and three beautiful
                 children.
               </p>
             </div>

@@ -51,7 +51,7 @@ const IndexPage = (props) => {
             Woodworker, Adult Child, and Mentor just to name a few. My favorite
             hobby is either spilling drinks or collecting books I may one day
             read. If any of that resonates with you, and you'd like to talk,
-            <Link to="/contact"> send me an email!</Link>!
+            <Link to="/contact"> send me an email</Link>!
           </h3>
           <Link to="/contact" className="button highlighted">
             Let's Talk!
