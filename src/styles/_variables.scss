@@ -6,6 +6,8 @@ $color-secondary: #6d327c;
 $color-highlight: #36C486;
 $color-light: white;
 $gradient-border: linear-gradient(60deg,#6d327c, #485DA6, #00a1ba, #00BF98, #36C486);
+$gradient-button-webkit: -webkit-gradient(linear, left bottom, right top, from($color-primary), to($color-secondary));
+$gradient-button-opera: -o-linear-gradient(left bottom, $color-primary, $color-secondary);
 $gradient-button: linear-gradient(to right top, $color-primary, $color-secondary);
 $gradient-button-hover: linear-gradient(to right top, $color-secondary, $color-primary);
 $gradient-hero: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486);

@@ -79,7 +79,7 @@ const AndOwnsASuitPage = (props) => {
           </a>
           </section>
         </div>
-        <section className="professional-writing">
+        <section className="dark professional-writing">
           <div className="blog-four-up">
             <h2 className="top-content--header">Technical Writing</h2>
             <BlogPreviewList

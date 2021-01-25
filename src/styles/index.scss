@@ -92,6 +92,10 @@ section {
         color: $color-light;
       }
     }
+
+    & .button:hover {
+      color: $color-light !important;
+    }
   }
 }
 
