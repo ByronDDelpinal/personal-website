@@ -1,15 +1,16 @@
-var dotenv = require("dotenv")
-dotenv.config()
+var dotenv = require('dotenv');
+dotenv.config();
 
-const { accessToken, spaceId, trackingId } = process.env
+const { accessToken, spaceId, trackingId } = process.env;
 
 module.exports = {
   siteMetadata: {
     title: `Byron Delpinal | Do. Write. Teach.`,
     description: `Software developer by trade and passion, my focus is to create stable, reliable, and performant web applications.`,
     author: `Byron Delpinal`,
-    twitterHandle: "@ByronDelpinal",
+    twitterHandle: '@ByronDelpinal',
     url: `https://byron.codes/`,
+    siteUrl: `https://byron.codes/`,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -19,6 +20,12 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        createLinkInHead: true,
       },
     },
     {
@@ -60,4 +67,4 @@ module.exports = {
       },
     },
   ],
-}
+};
