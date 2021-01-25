@@ -41,7 +41,7 @@ const Template = ({ children, hideHeader, selectedPage }) => (
             {
               name: 'keywords',
               content:
-                'local business, shop local, akron, ohio, small business, entrepreneur',
+                'byron delpinal, software developer, consultant, engineer, father, husband, akron, ohio',
             },
             {
               property: 'og:title',
@@ -53,11 +53,11 @@ const Template = ({ children, hideHeader, selectedPage }) => (
             },
             {
               property: 'og:image',
-              content: `https://supportlocalakron.com${shareImg}`,
+              content: `https://byron.codes${shareImg}`,
             },
             {
               property: 'og:url',
-              content: 'https://supportlocalakron.com',
+              content: 'https://byron.codes',
             },
             {
               property: 'og:type',
@@ -73,7 +73,7 @@ const Template = ({ children, hideHeader, selectedPage }) => (
             },
             {
               name: 'twitter:image',
-              content: `https://supportlocalakron.com${shareImg}`,
+              content: `https://byron.codes${shareImg}`,
             },
           ]}
         >
