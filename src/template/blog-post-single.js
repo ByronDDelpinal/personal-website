@@ -6,36 +6,62 @@ import Img from 'gatsby-image';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React, { Component } from 'react';
 
-import { INLINES } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import Layout from '../components/layout';
 import BlogContentBlock from '../components/blog-content-block';
+
+const getBlogContent = (blogPost) => {
+  const blogPostJSON =
+    blogPost && blogPost.content && blogPost.content.raw
+      ? JSON.parse(blogPost.content.raw)
+      : {};
+  const imageReferences =
+    blogPost && blogPost.content && blogPost.content.references
+      ? blogPost.content.references
+      : [];
+
+  const blogPostOptions = getBlogPostOptions(imageReferences);
+
+  return documentToReactComponents(blogPostJSON, blogPostOptions);
+};
 
 // Overrides the way we handle the inline hypertext item in a document. This
 // adds outbound linking so we can track if traffic is actually going to
 // the businesses signing up
-const blogPostOptions = {
-  renderNode: {
-    [INLINES.HYPERLINK]: (node, children) => (
-      <OutboundLink
-        href={node.data.uri}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        {children}
-      </OutboundLink>
-    ),
-  },
-};
+const getBlogPostOptions = (imageReferences) => {
+  return {
+    renderNode: {
+      [INLINES.HYPERLINK]: (node, children) => (
+        <OutboundLink
+          href={node.data.uri}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {children}
+        </OutboundLink>
+      ),
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        // Get the asset ID from the current node
+        const assetID = node.data.target.sys.id;
 
-const getRichTextContent = jsonContent => {
-  // Creates a document from a Contenful Rich Text Field
-  const blogPostContent = {
-    nodeType: 'document',
-    data: {},
-    content: jsonContent || [],
+        // Find the node reference
+        const assetFluid = imageReferences.find(
+          (imageReference) => imageReference.contentful_id === assetID
+        ).fluid;
+
+        console.log(node);
+        console.log(imageReferences);
+
+        return (
+          <Img
+            backgroundColor={'#f4f8fb'}
+            fluid={assetFluid}
+            objectFit="none"
+          />
+        );
+      },
+    },
   };
-
-  return documentToReactComponents(blogPostContent, blogPostOptions);
 };
 
 class BlogPostTemplate extends Component {
@@ -55,6 +81,8 @@ class BlogPostTemplate extends Component {
     if (blogPost.isExternal) {
       return null;
     }
+
+    const blogContent = getBlogContent(blogPost);
 
     return (
       <Layout selectedPage="writes">
@@ -100,6 +128,7 @@ class BlogPostTemplate extends Component {
           ]}
         />
         <section className="blog-post">
+          <h1>{blogPost.name}</h1>
           <div className="entry-media">
             <Img
               backgroundColor={'#f4f8fb'}
@@ -108,14 +137,11 @@ class BlogPostTemplate extends Component {
             />
           </div>
           <div className="post-content">
-              <h1>{blogPost.name}</h1>
-              <h3>TL;DR</h3>
-              <p>{blogPost.contentSummary}</p>
-              {getRichTextContent(blogPost.content.json.content || [])}
-              {hasContentBlocks &&
-                blogPost.contentBlocks.map(contentBlock => (
-                  <BlogContentBlock content={contentBlock} />
-                ))}
+            {blogContent}
+            {hasContentBlocks &&
+              blogPost.contentBlocks.map((contentBlock) => (
+                <BlogContentBlock content={contentBlock} />
+              ))}
           </div>
           {/* Sidebar Stuff Goes Here, need to change back to col-lg-7 col-md-7 */}
           {/* {anyRelatedBlogPosts ? (
@@ -161,12 +187,23 @@ export const pageQuery = graphql`
     contentfulBlogPost(urlName: { eq: $urlName }) {
       category
       content {
-        json
+        raw
+        references {
+          contentful_id
+          fluid {
+            aspectRatio
+            sizes
+            src
+            srcSetWebp
+            srcSet
+            srcWebp
+          }
+        }
       }
       contentSummary
       contentBlocks {
         content {
-          json
+          raw
         }
         id
         image {
@@ -177,7 +214,6 @@ export const pageQuery = graphql`
             srcSetWebp
             srcSet
             srcWebp
-            tracedSVG
           }
           title
           description

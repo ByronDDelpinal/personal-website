@@ -170,7 +170,7 @@ export const query = graphql`
         }
         contentSummary
         content {
-          content
+          raw
         }
       }
     }

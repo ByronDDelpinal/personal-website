@@ -187,7 +187,7 @@ export const pageQuery = graphql`
         }
         contentSummary
         content {
-          content
+          raw
         }
       }
     }

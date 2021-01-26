@@ -115,7 +115,7 @@ export const query = graphql`
         }
         contentSummary
         content {
-          content
+          raw
         }
       }
     }
@@ -145,7 +145,7 @@ export const query = graphql`
         }
         contentSummary
         content {
-          content
+          raw
         }
       }
     }
@@ -175,7 +175,7 @@ export const query = graphql`
         }
         contentSummary
         content {
-          content
+          raw
         }
       }
     }
