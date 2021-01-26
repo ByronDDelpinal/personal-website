@@ -8,7 +8,6 @@ import React, { Component } from 'react';
 
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import Layout from '../components/layout';
-import BlogContentBlock from '../components/blog-content-block';
 
 const getBlogContent = (blogPost) => {
   const blogPostJSON =
@@ -64,8 +63,6 @@ const getBlogPostOptions = (imageReferences) => {
 class BlogPostTemplate extends Component {
   render() {
     const blogPost = this.props.data.contentfulBlogPost;
-    const hasContentBlocks =
-      blogPost.contentBlocks && blogPost.contentBlocks.length > 0;
     // const relatedBlogPosts = this.props.data.allContentfulBlogPost.nodes;
     // const anyRelatedBlogPosts = relatedBlogPosts.length > 0;
 
@@ -135,10 +132,6 @@ class BlogPostTemplate extends Component {
           </div>
           <div className="post-content">
             {blogContent}
-            {hasContentBlocks &&
-              blogPost.contentBlocks.map((contentBlock) => (
-                <BlogContentBlock content={contentBlock} />
-              ))}
           </div>
           {/* Sidebar Stuff Goes Here, need to change back to col-lg-7 col-md-7 */}
           {/* {anyRelatedBlogPosts ? (
@@ -198,25 +191,6 @@ export const pageQuery = graphql`
         }
       }
       contentSummary
-      contentBlocks {
-        content {
-          raw
-        }
-        id
-        image {
-          fluid {
-            aspectRatio
-            sizes
-            src
-            srcSetWebp
-            srcSet
-            srcWebp
-          }
-          title
-          description
-        }
-        title
-      }
       id
       image {
         title
