@@ -49,9 +49,6 @@ const getBlogPostOptions = (imageReferences) => {
           (imageReference) => imageReference.contentful_id === assetID
         ).fluid;
 
-        console.log(node);
-        console.log(imageReferences);
-
         return (
           <Img
             backgroundColor={'#f4f8fb'}

@@ -2,11 +2,72 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: $spacing-medium calc((100vw - #{$max-page-width}) / 2);
+  max-width: $max-page-width;
+
+  h1 {
+    margin: $spacing-small 0;
+  }
 
   & .entry-media {
     flex-basis: 100%;
     width: 100%;
+  }
+
+  & .post-content {
+    h1,
+    h2,
+    h3 {
+      margin: $spacing-small 0;
+    }
+
+    h2 {
+      margin-top: $spacing-medium;
+    }
+
+    ol {
+      padding-left: $spacing-large;
+
+      & > li {
+        list-style-type: decimal;
+      }
+    }
+
+    p {
+      margin: $spacing-medium 0;
+    }
+
+    ul {
+      padding-left: $spacing-large;
+
+      & > li {
+        list-style-type: square;
+      }
+    }
+
+    li {
+      padding-left: $spacing-xsmall;
+
+      & > p {
+        margin: $spacing-xsmall 0;
+      }
+    }
+
+    & .gatsby-image-wrapper {
+      margin-top: $spacing-medium;
+
+      @media (min-width: $max-page-width) {
+        display: inline-block;
+        margin-right: 3%;
+        width: 48%;
+
+        & + p {
+          display: inline-block;
+          margin-top: $spacing-medium;
+          max-width: 48%;
+          vertical-align: top;
+        }
+      }
+    }
   }
 
   & .post-content {
