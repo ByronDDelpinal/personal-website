@@ -12,6 +12,7 @@
     "fontsource-bangers": "^3.1.5",
     "fontsource-pt-sans-narrow": "^3.1.5",
     "gatsby": "^2.31.0",
+    "gatsby-background-image": "^1.4.0",
     "gatsby-cli": "^2.10.13",
     "gatsby-image": "^2.2.45",
     "gatsby-plugin-create-client-paths": "^2.1.24",

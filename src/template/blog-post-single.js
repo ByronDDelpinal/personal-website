@@ -1,10 +1,12 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { DiscussionEmbed } from 'disqus-react';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React, { Component } from 'react';
+
+import BackgroundImage from 'gatsby-background-image';
 
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import Layout from '../components/layout';
@@ -63,8 +65,8 @@ const getBlogPostOptions = (imageReferences) => {
 class BlogPostTemplate extends Component {
   render() {
     const blogPost = this.props.data.contentfulBlogPost;
-    // const relatedBlogPosts = this.props.data.allContentfulBlogPost.nodes;
-    // const anyRelatedBlogPosts = relatedBlogPosts.length > 0;
+    const relatedBlogPosts = this.props.data.allContentfulBlogPost.nodes;
+    const anyRelatedBlogPosts = relatedBlogPosts.length > 0;
 
     const disqusConfig = {
       shortname: process.env.GATSBY_DISQUS_NAME,
@@ -121,49 +123,55 @@ class BlogPostTemplate extends Component {
             },
           ]}
         />
-        <section className="blog-post">
+        <BackgroundImage
+          Tag="div"
+          className="hero-image"
+          fluid={blogPost.image.fluid}
+          backgroundColor={`#f4f8fb`}
+          objectFit="cover"
+        >
           <h1>{blogPost.name}</h1>
-          <div className="entry-media">
-            <Img
-              backgroundColor={'#f4f8fb'}
-              fluid={blogPost.image.fluid}
-              objectFit="none"
-            />
-          </div>
-          <div className="post-content">
-            {blogContent}
-          </div>
-          {/* Sidebar Stuff Goes Here, need to change back to col-lg-7 col-md-7 */}
-          {/* {anyRelatedBlogPosts ? (
-                <div className="col-md-4">
-                  <div className="sidebar-blk">
-                    <h4>Related Posts</h4>
-                    <p>
-                      While you're here, be sure to check out these other{' '}
-                      <span className="category">{blogPost.category}</span>{' '}
-                      listings!
-                    </p>
-                    <ul className="related-business-list">
-                      {relatedBlogPosts.map(relatedBlogPost => (
-                        <li key={relatedBlogPost.id}>
+        </BackgroundImage>
+        <section className="blog-post">
+          <div className="content-wrapper">
+            <div className="post-content">{blogContent}</div>
+            {/* Sidebar Stuff Goes Here, need to change back to col-lg-7 col-md-7 */}
+            <div className="sidebar dark">
+              <h4>Hey there!</h4>
+              <p>
+                If this post resonates with you at all, I'd love to talk about
+                it. Feel free to{' '}
+                <Link to="/contact">send me an email and we'll chat</Link>!
+              </p>
+              {anyRelatedBlogPosts ? (
+                <>
+                  <p>
+                    While you're here, be sure to check out these other{' '}
+                    <span className="category">{blogPost.category}</span>{' '}
+                    listings!
+                  </p>
+                  <ul className="related-business-list">
+                    {relatedBlogPosts.map((relatedBlogPost) => (
+                      <li key={relatedBlogPost.id}>
+                        <Link to={relatedBlogPost.urlName}>
+                          <Img
+                            className="related-image"
+                            fluid={relatedBlogPost.image.fluid}
+                            objectFit="cover"
+                          />
+                        </Link>
+                        <div class="related-information">
                           <Link to={relatedBlogPost.urlName}>
-                            <Img
-                              className="related-image"
-                              fluid={relatedBlogPost.image.fluid}
-                              objectFit="cover"
-                            />
+                            <span>{relatedBlogPost.name}</span>
                           </Link>
-                          <div class="related-information">
-                            <Link to={relatedBlogPost.urlName}>
-                              <span>{relatedBlogPost.name}</span>
-                            </Link>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ) : null} */}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
+            </div>
+          </div>
         </section>
       </Layout>
     );

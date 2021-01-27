@@ -299,64 +299,6 @@ h2.section-title:after {
 }
 /*/ Page Header /*/
 
-/** Sidebar **/
-.sidebar-blk {
-  background: $color-light;
-  box-shadow: 2px 2px 2px #f0faff;
-  color: $color-dark;
-  padding: 20px;
-  position: sticky;
-  top: 0;
-}
-
-.sidebar-blk h4 {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.sidebar-blk ul {
-  list-style: none;
-  margin-bottom: 0;
-  padding: 0;
-}
-
-.sidebar-blk ul li {
-  align-items: center;
-  display: flex;
-  margin-top: 20px;
-  width: 100%;
-}
-
-.sidebar-blk .category {
-  text-transform: lowercase;
-}
-
-.sidebar-blk .related-image {
-  background-color: transparent;
-  box-shadow: none;
-  float: left;
-  height: 50px;
-  margin: 0 15px 0 0;
-  width: 70px;
-}
-
-.sidebar-blk .related-information {
-  align-items: center;
-  display: flex;
-}
-
-.sidebar-blk span.meta {
-  display: block;
-}
-
-.sidebar-blk ul li a {
-  text-decoration: none;
-  color: #002d52;
-  font-family: "PT Sans Narrow",Helvetica,Arial,sans-serif;
-  line-height: 20px;
-}
-/*/ Sidebar /*/
-
 .contact-page .main-content {
   background-color: $color-dark;
 }
