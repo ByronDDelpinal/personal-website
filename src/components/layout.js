@@ -15,7 +15,7 @@ import 'fontsource-bangers'
 import 'fontsource-pt-sans-narrow'
 import 'fontsource-pt-sans-narrow/700.css'
 import '../styles/index.scss';
-import shareImg from '../images/portrait-outdoors.jpg';
+import shareImg from '../images/social-share.png';
 
 const Template = ({ children, hideHeader, selectedPage }) => (
   <StaticQuery
