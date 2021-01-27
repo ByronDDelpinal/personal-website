@@ -27,6 +27,10 @@
       margin-right: 5px;
     }
 
+    &--sub-header {
+      margin-bottom: 0 !important;
+    }
+
     @media (min-width: 700px) {
       height: 25rem;
     }
