@@ -7,7 +7,7 @@ const Header = props => {
   return (
     <section className="site-header">
       <Link to="/" className="brand-logo">
-        <img src={logoImg} alt="brand logo" />
+        <img src={logoImg} alt="small version of my face with a blueh at on" />
       </Link>
       <nav id="main-menu">
         <ul>

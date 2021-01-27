@@ -6,6 +6,8 @@ import BlogPreviewList from '../components/blog-preview-list';
 import Header from '../components/header';
 import Layout from '../components/layout';
 
+import heroSoloImage from '../images/header-solo-purple.png'
+
 const IndexPage = (props) => {
   const diyPost = props.data.diyPost.nodes;
   const personalPost = props.data.personalPost.nodes;
@@ -28,6 +30,7 @@ const IndexPage = (props) => {
             I write software and do cool stuff. <br />
             Pull up a chair and stay a while.
           </h3>
+          <img className="hero--right" src={heroSoloImage} alt="me in a purple hoodie that reads Everyday Akron" />
         </div>
         <section className="title-with-selections">
           <h3 className="title-with-selections--header">
