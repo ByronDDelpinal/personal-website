@@ -42,16 +42,15 @@ const About = (props) => {
                 It me.
               </h2>
               <p>
-                Byron Delpinal is a Sr. Consultant & Tech Lead at Sparkbox.
-                Software developer by trade and passion, his focus is to create
-                stable, reliable, and performant web applications. Byron’s
-                experience ranges from building web applications for startups as
-                well as being a lead on enterprise teams releasing software
-                daily to millions of users. He has been recognized for his work
-                both in the office and in his community with a 30 For The Future
-                award by the Greater Akron Chamber of Commerce. Byron enjoys
-                playing and creating music in his spare time, but you can
-                usually find him outside with his wife and three beautiful
+                Software developer by trade and passion, my focus is to create
+                stable, reliable, and performant web applications. My
+                experience ranges from building full-stack web applications for startups to
+                being a lead on enterprise teams releasing software
+                daily to millions of users. I've been recognized for my work
+                both in the office and in my community with a 30 For The Future
+                award by the Greater Akron Chamber of Commerce. I enjoy
+                playing and creating music in my spare time, but you can
+                usually find me outside with my wife and three beautiful
                 children.
               </p>
             </div>
