@@ -3,22 +3,20 @@ import Helmet from 'react-helmet';
 import { saveAs } from 'file-saver';
 import vCardsJS from 'vcards-js';
 
+import { bbMe } from '../images/base64/index';
 import heroSoloImage from '../images/header-solo-purple.png';
 import Layout from '../components/layout';
 
-// The form on this page works because it's deployed to Netlify and they
-// do some magic around it that makes it work. If you're not deploying there,
-// you may need to handle the form submit on your own.
 const AndAlwaysForgetsHisBusinessCards = (props) => {
   const siteTitle = props.data.site.siteMetadata.title;
   const vCard = vCardsJS();
 
-  //set properties
   vCard.firstName = 'Byron';
   vCard.middleName = 'Dylan';
   vCard.lastName = 'Delpinal';
   vCard.organization = 'Branding Brand';
-  //   vCard.photo.embedFromFile(heroSoloImage);
+  vCard.photo.embedFromString(bbMe);
+  vCard.logo.embedFromString(bbMe);
   vCard.cellPhone = '330-993-0543';
   vCard.email = 'byronddelpinal@gmail.com';
   vCard.birthday = new Date(1990, 0, 24);
@@ -50,7 +48,7 @@ const AndAlwaysForgetsHisBusinessCards = (props) => {
           </h3>
           <h3 className="hero--sub-header unnecessary">
             I suck at carrying around business cards, so I made this. The Earth
-            will thank us both one day.
+            says thanks. 💚🌳
           </h3>
           <h3 className="hero--sub-header">
             Phone: <a href="tel:330-993-0543">(330)993-0543</a>
