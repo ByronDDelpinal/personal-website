@@ -1,0 +1,63 @@
+.and-always-forgets-his-business-cards {
+  & a {
+    color: $color-light;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+
+  & .button {
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+    border-image: none;
+    color: $color-light;
+    font-size: 15px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  & .hero {
+    align-content: flex-start;
+    padding: $spacing-medium;
+  }
+
+  & .hero--header {
+    text-align: left;
+    font-size: 27px;
+    margin-bottom: 10px;
+  }
+
+  & .hero--right {
+    max-height: 45vh;
+  }
+
+  & .hero--sub-header {
+    font-size: 15px;
+    margin-bottom: $spacing-large;
+    margin-bottom: 10px;
+    margin-top: none;
+    text-align: left;
+  }
+
+  & .unnecessary {
+    display: none;
+  }
+
+  @media (min-width: 320px) {
+    & .unnecessary {
+      display: initial;
+    }
+  }
+
+  @media (min-width: 400px) {
+    & .hero--sub-header {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    & .button {
+      font-size: 18px;
+    }
+  }
+
+  //   @media (min-width: )
+}

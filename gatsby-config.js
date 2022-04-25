@@ -6,7 +6,7 @@ const { accessToken, spaceId, trackingId } = process.env;
 module.exports = {
   siteMetadata: {
     title: `Byron Delpinal | Do. Write. Teach.`,
-    description: `Software developer by trade and passion, my focus is to create stable, reliable, and performant web applications.`,
+    description: `Software developer by trade and passion, my focus is to create stable, reliable, and performant mobile and web applications.`,
     author: `Byron Delpinal`,
     twitterHandle: '@ByronDelpinal',
     url: `https://byron.codes/`,

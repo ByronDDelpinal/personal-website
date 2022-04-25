@@ -1,4 +1,9 @@
 {
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "name": "personal-website",
   "description": "A way to put things on the internet",
   "version": "1.0.0",
@@ -9,6 +14,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "disqus-react": "^1.0.10",
+    "file-saver": "^2.0.5",
     "fontsource-bangers": "^3.1.5",
     "fontsource-pt-sans-narrow": "^3.1.5",
     "gatsby": "^2.31.0",
@@ -33,7 +39,8 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.0",
-    "react-share": "^4.1.0"
+    "react-share": "^4.1.0",
+    "vcards-js": "^2.10.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0"
